@@ -193,17 +193,17 @@ public class Character {
     Character c = new Character();
     c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
     c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("Img_Shadow_Idle") as Bitmap },
-      {ImgState.NO_WEAPON, Resources.GetObject("Img_Wizard_NoWeapon") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+      {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
+      {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
+      {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("willyWonkaDies") as Bitmap },
     };
     c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("", null) },
-      {TalkState.SAY_OW, ("", null) },
-      {TalkState.BONED, ("", null) },
-      {TalkState.GUN_WENT_OFF, ("", null) },
-      {TalkState.SURVIVED, ("", null) },
+      {TalkState.TALK_SMACK, ("She was a bad egg!", null) },
+      {TalkState.SAY_OW, ("A little nonsense now and then is relished by the wisest men.", null) },
+      {TalkState.BONED, ("Is it my soul that calls upon my name?", null) },
+      {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.", null) },
+      {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.", null) },
     };
     return c;
   }
