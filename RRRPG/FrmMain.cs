@@ -39,7 +39,7 @@ namespace RRRPG
             //each weapon has own background image that loads with WeaponType
             weaponBackgroundMap = new() {
                 {WeaponType.BOW, Resources.yoshiBackground },
-                {WeaponType.CORK_GUN, Resources.Rambo },
+                {WeaponType.CORK_GUN, Resources.willyBackground },
                 {WeaponType.WATER_GUN, Resources.flameBackground },
                 {WeaponType.MAGIC_WAND, Resources.wizardBackground },
                 {WeaponType.NERF_REVOLVER, Resources.Rambo },
@@ -166,6 +166,7 @@ namespace RRRPG
             opponent = Character.MakeOpponent(type, picOpponent, lblOpponentSpeak);
             player = Character.MakePlayer(type, picPlayer, lblPlayerSpeak);
             this.BackgroundImage = weaponBackgroundMap[type];
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
         private void picWeaponSelectMagicWand_Click(object sender, EventArgs e)

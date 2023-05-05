@@ -64,7 +64,7 @@
             // 
             // picOpponent
             // 
-            picOpponent.BackgroundImageLayout = ImageLayout.Stretch;
+            picOpponent.BackgroundImageLayout = ImageLayout.Center;
             picOpponent.Location = new Point(525, 120);
             picOpponent.Name = "picOpponent";
             picOpponent.Size = new Size(526, 501);
