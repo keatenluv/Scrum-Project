@@ -84,12 +84,14 @@ namespace RRRPG
                 tmrStateMachine.Enabled = false;
                 state = 2;
             }
+            // Player Shot
             else if (state == 3)
             {
                 player.SayOw();
                 state = 4;
                 tmrStateMachine.Interval = 2500;
             }
+            //Player Dies
             else if (state == 4)
             {
                 player.SayBoned();
@@ -99,29 +101,39 @@ namespace RRRPG
                 state = -1;
                 tmrStateMachine.Enabled = false;
             }
+            // Opponent's turn
             else if (state == 5)
             {
                 player.Shutup();
                 opponent.ShowReady();
                 state = 6;
             }
+            //Opponent pulls trigger
             else if (state == 6)
             {
+                //Chamber had bullet
                 if (opponent.PullTrigger(weapon))
                 {
-                    state = 7;
+                    //Opponent did not dodge
+                    if (!QuickTimeEvent(opponent))
+                    {
+                        player.ShowKill();
+                        player.SayGunWentOff();
+                        state = 7;
+                    }
                 }
-                else
-                {
-                    state = 1;
-                }
+                opponent.ShowNoWeapon();
+                opponent.SaySurvived();
+                state = 1;
             }
+            // Opponent Shot
             else if (state == 7)
             {
                 opponent.SayOw();
                 state = 8;
                 tmrStateMachine.Interval = 2500;
             }
+            // Opponent Dies
             else if (state == 8)
             {
                 opponent.SayBoned();
@@ -135,18 +147,27 @@ namespace RRRPG
 
         private void btnDoIt_Click(object sender, EventArgs e)
         {
+            //Chamber had bullet
             if (player.PullTrigger(weapon))
             {
-                state = 3;
-                tmrStateMachine.Interval = 2200;
-                tmrStateMachine.Enabled = true;
+                //Player failed Quick Time event
+                if (QuickTimeEvent(player))
+                {
+                    player.ShowKill();
+                    player.SayGunWentOff();
+                    state = 3;
+                    tmrStateMachine.Interval = 2200;
+                    tmrStateMachine.Enabled = true;
+                    return;
+                }
+
             }
-            else
-            {
-                state = 5;
-                tmrStateMachine.Interval = 1500;
-                tmrStateMachine.Enabled = true;
-            }
+            //Chamber didn't have bullet or dodged.
+            player.ShowNoWeapon();
+            player.SaySurvived();
+            state = 5;
+            tmrStateMachine.Interval = 1500;
+            tmrStateMachine.Enabled = true;
             btnDoIt.Visible = false;
         }
 
@@ -167,6 +188,21 @@ namespace RRRPG
             player = Character.MakePlayer(type, picPlayer, lblPlayerSpeak);
             this.BackgroundImage = weaponBackgroundMap[type];
             this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+
+        // Returns true if passed
+        private bool QuickTimeEvent(Character character)
+        {
+            if (character.Type == "opponent")
+            {
+                //Simulate chance of opponent to dodge
+                if (weapon.RandNumber() < character.Stats.Reflex)
+                    return true;
+
+                return false;
+            }
+            // Player quick time event
+            return true;
         }
 
         private void picWeaponSelectMagicWand_Click(object sender, EventArgs e)
