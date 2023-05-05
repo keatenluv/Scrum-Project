@@ -75,7 +75,7 @@
             // 
             picPlayer.BackgroundImageLayout = ImageLayout.Stretch;
             picPlayer.Image = Properties.Resources.Img_Bender_Idle;
-            picPlayer.Location = new Point(12, 86);
+            picPlayer.Location = new Point(-30, 184);
             picPlayer.Name = "picPlayer";
             picPlayer.Size = new Size(373, 597);
             picPlayer.TabIndex = 1;
@@ -96,22 +96,26 @@
             // lblPlayer
             // 
             lblPlayer.AutoSize = true;
+            lblPlayer.BackColor = Color.ForestGreen;
+            lblPlayer.BorderStyle = BorderStyle.Fixed3D;
             lblPlayer.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(212, 48);
+            lblPlayer.Location = new Point(186, 98);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(85, 32);
+            lblPlayer.Size = new Size(87, 34);
             lblPlayer.TabIndex = 3;
             lblPlayer.Text = "Player";
             // 
             // lblOpponent
             // 
             lblOpponent.AutoSize = true;
+            lblOpponent.BackColor = Color.Firebrick;
+            lblOpponent.BorderStyle = BorderStyle.Fixed3D;
             lblOpponent.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             lblOpponent.ForeColor = Color.White;
             lblOpponent.Location = new Point(761, 50);
             lblOpponent.Name = "lblOpponent";
-            lblOpponent.Size = new Size(129, 32);
+            lblOpponent.Size = new Size(131, 34);
             lblOpponent.TabIndex = 4;
             lblOpponent.Text = "Opponent";
             // 
@@ -141,7 +145,8 @@
             // 
             // panWeaponSelect
             // 
-            panWeaponSelect.BackColor = Color.Black;
+            panWeaponSelect.BackColor = Color.FromArgb(192, 0, 192);
+            panWeaponSelect.BorderStyle = BorderStyle.Fixed3D;
             panWeaponSelect.Controls.Add(lblWeaponSelectBow);
             panWeaponSelect.Controls.Add(picWeaponSelectBow);
             panWeaponSelect.Controls.Add(lblWeaponSelectNerfRev);
@@ -155,7 +160,7 @@
             panWeaponSelect.Controls.Add(lblWeaponSelectMagicWand);
             panWeaponSelect.Location = new Point(507, 636);
             panWeaponSelect.Name = "panWeaponSelect";
-            panWeaponSelect.Size = new Size(566, 229);
+            panWeaponSelect.Size = new Size(584, 229);
             panWeaponSelect.TabIndex = 7;
             // 
             // lblWeaponSelectBow
@@ -293,7 +298,7 @@
             lblPlayerSpeak.AutoSize = true;
             lblPlayerSpeak.BackColor = Color.White;
             lblPlayerSpeak.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPlayerSpeak.Location = new Point(330, 158);
+            lblPlayerSpeak.Location = new Point(299, 251);
             lblPlayerSpeak.Name = "lblPlayerSpeak";
             lblPlayerSpeak.Size = new Size(288, 32);
             lblPlayerSpeak.TabIndex = 10;
@@ -314,7 +319,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1085, 887);
+            ClientSize = new Size(1121, 887);
             Controls.Add(lblPlayerSpeak);
             Controls.Add(lblOpponentSpeak);
             Controls.Add(btnStart);

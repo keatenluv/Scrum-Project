@@ -36,16 +36,17 @@ namespace RRRPG
                 {WeaponType.MAGIC_WAND, (picWeaponSelectMagicWand, lblWeaponSelectMagicWand) },
                 {WeaponType.NERF_REVOLVER, (picWeaponSelectNerfRev, lblWeaponSelectNerfRev) },
             };
+            //each weapon has own background image that loads with WeaponType
             weaponBackgroundMap = new() {
-                {WeaponType.BOW, Resources.Rambo },
+                {WeaponType.BOW, Resources.yoshiBackground },
                 {WeaponType.CORK_GUN, Resources.Rambo },
-                {WeaponType.WATER_GUN, Resources.Rambo },
-                {WeaponType.MAGIC_WAND, Resources.Rambo },
+                {WeaponType.WATER_GUN, Resources.flameBackground },
+                {WeaponType.MAGIC_WAND, Resources.wizardBackground },
                 {WeaponType.NERF_REVOLVER, Resources.Rambo },
             };
             SelectWeapon(WeaponType.MAGIC_WAND);
 
-            // Add these two lines at the end
+            // make background color of player and opponent transparent
             picOpponent.BackColor = Color.Transparent;
             picPlayer.BackColor = Color.Transparent;
         }
