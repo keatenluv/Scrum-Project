@@ -196,7 +196,7 @@ public class Character {
       {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
       {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("willyWonkaDies") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wonkaDying") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("She was a bad egg!", null) },
@@ -211,10 +211,10 @@ public class Character {
     Character c = new Character();
     c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
     c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("Img_Yoshi_Idle") as Bitmap },
+      {ImgState.IDLE, Resources.GetObject("Yoshi_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Rambo") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Yoshi_Bow") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("Yoshi_Bow") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("", null) },
