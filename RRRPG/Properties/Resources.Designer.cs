@@ -515,33 +515,6 @@ namespace RRRPG.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Yoshi1 {
-            get {
-                return ResourceManager.GetStream("Yoshi1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Yoshi2 {
-            get {
-                return ResourceManager.GetStream("Yoshi2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream Yoshi3 {
-            get {
-                return ResourceManager.GetStream("Yoshi3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap wonkaDying {
@@ -606,6 +579,33 @@ namespace RRRPG.Properties {
         internal static System.IO.UnmanagedMemoryStream yoshi_tongue {
             get {
                 return ResourceManager.GetStream("yoshi_tongue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Yoshi1 {
+            get {
+                return ResourceManager.GetStream("Yoshi1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Yoshi2 {
+            get {
+                return ResourceManager.GetStream("Yoshi2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Yoshi3 {
+            get {
+                return ResourceManager.GetStream("Yoshi3", resourceCulture);
             }
         }
         
