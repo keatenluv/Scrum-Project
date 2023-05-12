@@ -60,7 +60,7 @@ namespace RRRPG
             opponent.ShowIdle();
             btnStart.Visible = false;
             opponent.SaySmack();
-            tmrStateMachine.Interval = 3500;
+            tmrStateMachine.Interval = 5000;
             tmrStateMachine.Enabled = true;
             state = 0;
             panWeaponSelect.Visible = false;
