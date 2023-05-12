@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="FireGoblin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireGoblin1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FireGoblin2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireGoblin2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="FireGoblin3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FireGoblin3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="flameBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flameBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -214,6 +223,12 @@
   <data name="Snd_Bender_OhMyGod" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\audio\snd_bender_ohmygod.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="Willy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Willy1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Willy2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Willy2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="willyBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\willyBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,10 +244,79 @@
   <data name="willyWonkaSurvives" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\willyWonkaSurvives.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Wizard1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wizard1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Wizard2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wizard2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Wizard3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wizard3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="wizardBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wizardBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Wonka3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wonka3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yoshi1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yoshi1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yoshi2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yoshi2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Yoshi3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yoshi3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wonkaDying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wonkaDying.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yoshi" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\yoshi.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="yoshiBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yoshiBackground.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yoshi_Bow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Yoshi_Bow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yoshi_Dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yoshi_Dying.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yoshi_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Yoshi_Idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yoshi_NoWeapon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Yoshi_NoWeapon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="yoshi_tongue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\yoshi-tongue.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nerf_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\nerf_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nerf_death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\nerf_death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NERF_FEST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\NERF_FEST.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Nerf_Kid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerf_Kid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nerf_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerf_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nerk_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerk_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YOU_GOT_TROUBLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\YOU_GOT_TROUBLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="bender_dying_nerf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\bender_dying_nerf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bener_Ready_Nerf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Bener_Ready_Nerf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

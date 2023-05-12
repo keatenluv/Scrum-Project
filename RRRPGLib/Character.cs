@@ -187,8 +187,8 @@ public class Character
       {TalkState.TALK_SMACK, ("Why did I choose a water gun?", null) },
       {TalkState.SAY_OW, ("Ow", null) },
       {TalkState.BONED, ("So cold!", null) },
-      {TalkState.GUN_WENT_OFF, ("Oh noes", null) },
-      {TalkState.SURVIVED, ("My fire continues to roar!", null) },
+      {TalkState.GUN_WENT_OFF, ("Oh noes",Resources.GetStream("FireGoblin1")) },
+      {TalkState.SURVIVED, ("My fire continues to roar!", Resources.GetStream("FireGoblin2")) },
     };
         return c;
     }
@@ -200,52 +200,51 @@ public class Character
       {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
       {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("willyWonkaDies") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wonkaDying") as Bitmap },
     };
-        c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("She was a bad egg!", null) },
+    c.dialogMap = new() {
+      {TalkState.TALK_SMACK, ("Welcome!",Resources.GetStream("Willy1")) },
       {TalkState.SAY_OW, ("A little nonsense now and then is relished by the wisest men.", null) },
       {TalkState.BONED, ("Is it my soul that calls upon my name?", null) },
-      {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.", null) },
-      {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.", null) },
+      {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.",Resources.GetStream("Wonka3")) },
+      {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.",Resources.GetStream("Willy2")) },
     };
-        return c;
-    }
-    private static Character MakeBowOpponent()
-    {
-        Character c = new Character();
-        c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
-        c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("Img_Yoshi_Idle") as Bitmap },
-      {ImgState.NO_WEAPON, Resources.GetObject("Rambo") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+    return c;
+  }
+  private static Character MakeBowOpponent() {
+    Character c = new Character();
+    c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
+    c.imgMap = new() {
+      {ImgState.IDLE, Resources.GetObject("Yoshi_Idle") as Bitmap },
+      {ImgState.NO_WEAPON, Resources.GetObject("Yoshi_NoWeapon") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Yoshi_Bow") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("Yoshi_Dying") as Bitmap },
     };
-        c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("", null) },
+    c.dialogMap = new() {
+
+      {TalkState.TALK_SMACK, ("YOSHI", Resources.GetStream("yoshi")) },
       {TalkState.SAY_OW, ("", null) },
-      {TalkState.BONED, ("", null) },
-      {TalkState.GUN_WENT_OFF, ("", null) },
+      {TalkState.BONED, ("", Resources.GetStream("yoshi_tongue")) },
+      {TalkState.GUN_WENT_OFF, ("", Resources.GetStream("yoshi_tongue")) },
       {TalkState.SURVIVED, ("", null) },
     };
-        return c;
-    }
-    private static Character MakeNerfRevolverOpponent()
-    {
-        Character c = new Character();
-        c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
-        c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("Img_Shadow_Idle") as Bitmap },
-      {ImgState.NO_WEAPON, Resources.GetObject("Img_Wizard_NoWeapon") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+    return c;
+  }
+  private static Character MakeNerfRevolverOpponent() {
+    Character c = new Character();
+    c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
+    c.imgMap = new() {
+      {ImgState.IDLE, Resources.GetObject("Nerk_Kid_Ready") as Bitmap },
+      {ImgState.NO_WEAPON, Resources.GetObject("Nerf_Kid") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Nerf_Kid_Ready") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("nerf_death") as Bitmap },
     };
-        c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("", null) },
+    c.dialogMap = new() {
+      {TalkState.TALK_SMACK, ("WELCOME TO NERF FEST", Resources.GetStream("NERF_FEST")) },
       {TalkState.SAY_OW, ("", null) },
       {TalkState.BONED, ("", null) },
-      {TalkState.GUN_WENT_OFF, ("", null) },
-      {TalkState.SURVIVED, ("", null) },
+      {TalkState.GUN_WENT_OFF, ("", Resources.GetStream("nerf_death1")) },
+      {TalkState.SURVIVED, ("YOU GOT TROUBLE NOW", Resources.GetStream("YOU_GOT_TROUBLE")) },
     };
         return c;
     }
@@ -259,12 +258,12 @@ public class Character
       {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
       {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
     };
-        c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("I will outlast you!", null) },
+    c.dialogMap = new() {
+      {TalkState.TALK_SMACK, ("I will outlast you!", Resources.GetStream("Wizard1")) },
       {TalkState.SAY_OW, ("This hurts more than I thought!", null) },
       {TalkState.BONED, ("That didn't go as planned", null) },
-      {TalkState.GUN_WENT_OFF, ("Well, that sucks!", null) },
-      {TalkState.SURVIVED, ("I knew I would live!", null) },
+      {TalkState.GUN_WENT_OFF, ("Well, that sucks!", Resources.GetStream("Wizard3")) },
+      {TalkState.SURVIVED, ("I knew I would live!", Resources.GetStream("Wizard2")) },
     };
         return c;
     }
@@ -295,8 +294,8 @@ public class Character
         c.imgMap = new() {
       {ImgState.IDLE, Resources.GetObject("Img_Bender_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Img_Bender_Idle") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Bender_Ready_MagicWand") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Bender_Kill_MagicWand") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Bener_Ready_Nerf") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("bender_dying_nerf") as Bitmap },
     };
         c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("Bite my shiny metal ass!", Resources.GetStream("Snd_Bender_BiteMyShinyMetalAss")) },
