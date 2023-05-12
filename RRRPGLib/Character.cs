@@ -287,8 +287,8 @@ public class Character {
     c.imgMap = new() {
       {ImgState.IDLE, Resources.GetObject("Img_Bender_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Img_Bender_Idle") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Bender_Ready_MagicWand") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Bender_Kill_MagicWand") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Bener_Ready_Nerf") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("bender_dying_nerf") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("Bite my shiny metal ass!", Resources.GetStream("Snd_Bender_BiteMyShinyMetalAss")) },
