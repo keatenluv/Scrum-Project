@@ -230,17 +230,17 @@ public class Character {
     Character c = new Character();
     c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
     c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("Img_Shadow_Idle") as Bitmap },
-      {ImgState.NO_WEAPON, Resources.GetObject("Img_Wizard_NoWeapon") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+      {ImgState.IDLE, Resources.GetObject("Nerk_Kid_Ready") as Bitmap },
+      {ImgState.NO_WEAPON, Resources.GetObject("Nerf_Kid") as Bitmap },
+      {ImgState.READY, Resources.GetObject("Nerf_Kid_Ready") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("nerf_death") as Bitmap },
     };
     c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("", null) },
+      {TalkState.TALK_SMACK, ("WELCOME TO NERF FEST", Resources.GetStream("NERF_FEST")) },
       {TalkState.SAY_OW, ("", null) },
       {TalkState.BONED, ("", null) },
-      {TalkState.GUN_WENT_OFF, ("", null) },
-      {TalkState.SURVIVED, ("", null) },
+      {TalkState.GUN_WENT_OFF, ("", Resources.GetStream("nerf_death1")) },
+      {TalkState.SURVIVED, ("YOU GOT TROUBLE NOW", Resources.GetStream("YOU_GOT_TROUBLE")) },
     };
     return c;
   }

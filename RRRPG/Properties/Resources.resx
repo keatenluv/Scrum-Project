@@ -292,4 +292,25 @@
   <data name="yoshi_tongue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Audio\yoshi-tongue.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="nerf_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\nerf_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nerf_death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\nerf_death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="NERF_FEST" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\NERF_FEST.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Nerf_Kid" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerf_Kid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nerf_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerf_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nerk_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerk_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="YOU_GOT_TROUBLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\YOU_GOT_TROUBLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

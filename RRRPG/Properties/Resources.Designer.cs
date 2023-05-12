@@ -357,6 +357,64 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nerf_death {
+            get {
+                object obj = ResourceManager.GetObject("nerf_death", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream nerf_death1 {
+            get {
+                return ResourceManager.GetStream("nerf_death1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream NERF_FEST {
+            get {
+                return ResourceManager.GetStream("NERF_FEST", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nerf_Kid {
+            get {
+                object obj = ResourceManager.GetObject("Nerf_Kid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nerf_Kid_Ready {
+            get {
+                object obj = ResourceManager.GetObject("Nerf_Kid_Ready", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Nerk_Kid_Ready {
+            get {
+                object obj = ResourceManager.GetObject("Nerk_Kid_Ready", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rambo {
             get {
                 object obj = ResourceManager.GetObject("Rambo", resourceCulture);
@@ -616,6 +674,15 @@ namespace RRRPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("yoshiBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream YOU_GOT_TROUBLE {
+            get {
+                return ResourceManager.GetStream("YOU_GOT_TROUBLE", resourceCulture);
             }
         }
     }
