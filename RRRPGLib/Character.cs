@@ -181,11 +181,11 @@ public class Character {
     };
     // create dialog map
     c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("Why did I choose a water gun?", null) },
+      {TalkState.TALK_SMACK, ("Why did I choose a water gun?",Resources.GetStream("FireGoblin3")) },
       {TalkState.SAY_OW, ("Ow", null) },
       {TalkState.BONED, ("So cold!", null) },
-      {TalkState.GUN_WENT_OFF, ("Oh noes", null) },
-      {TalkState.SURVIVED, ("My fire continues to roar!", null) },
+      {TalkState.GUN_WENT_OFF, ("Oh noes",Resources.GetStream("FireGoblin1")) },
+      {TalkState.SURVIVED, ("My fire continues to roar!", Resources.GetStream("FireGoblin2")) },
     };
     return c;
   }
@@ -199,11 +199,11 @@ public class Character {
       {ImgState.KILL, Resources.GetObject("wonkaDying") as Bitmap },
     };
     c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("She was a bad egg!", null) },
+      {TalkState.TALK_SMACK, ("Welcome!",Resources.GetStream("Willy1")) },
       {TalkState.SAY_OW, ("A little nonsense now and then is relished by the wisest men.", null) },
       {TalkState.BONED, ("Is it my soul that calls upon my name?", null) },
-      {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.", null) },
-      {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.", null) },
+      {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.",Resources.GetStream("Wonka3")) },
+      {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.",Resources.GetStream("Willy2")) },
     };
     return c;
   }
@@ -217,6 +217,7 @@ public class Character {
       {ImgState.KILL, Resources.GetObject("Yoshi_Dying") as Bitmap },
     };
     c.dialogMap = new() {
+
       {TalkState.TALK_SMACK, ("YOSHI", Resources.GetStream("yoshi")) },
       {TalkState.SAY_OW, ("", null) },
       {TalkState.BONED, ("", Resources.GetStream("yoshi_tongue")) },
@@ -253,11 +254,11 @@ public class Character {
       {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
     };
     c.dialogMap = new() {
-      {TalkState.TALK_SMACK, ("I will outlast you!", null) },
+      {TalkState.TALK_SMACK, ("I will outlast you!", Resources.GetStream("Wizard1")) },
       {TalkState.SAY_OW, ("This hurts more than I thought!", null) },
       {TalkState.BONED, ("That didn't go as planned", null) },
-      {TalkState.GUN_WENT_OFF, ("Well, that sucks!", null) },
-      {TalkState.SURVIVED, ("I knew I would live!", null) },
+      {TalkState.GUN_WENT_OFF, ("Well, that sucks!", Resources.GetStream("Wizard3")) },
+      {TalkState.SURVIVED, ("I knew I would live!", Resources.GetStream("Wizard2")) },
     };
     return c;
   }
