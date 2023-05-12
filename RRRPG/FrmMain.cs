@@ -8,6 +8,16 @@ namespace RRRPG
     {
         private SoundPlayer soundPlayer;
         private int state;
+        private int _points;
+        private int points
+        {
+            get { return _points; }
+            set
+            {
+                _points = value;
+                PointsLabel.Text = $"Points: {value}";
+            }
+        }
         private Character player;
         private Character opponent;
         private Weapon weapon;
@@ -30,6 +40,7 @@ namespace RRRPG
             lblPlayerSpeak.Visible = false;
             weapon = Weapon.MakeWeapon(WeaponType.MAGIC_WAND);
             state = -1;
+            points = 0;
             weaponSelectMap = new() {
                 {WeaponType.BOW, (picWeaponSelectBow, lblWeaponSelectBow) },
                 {WeaponType.CORK_GUN, (picWeaponSelectCorkGun,lblWeaponSelectCorkGun) },
@@ -95,6 +106,7 @@ namespace RRRPG
             //Player Dies
             else if (state == 4)
             {
+                points = 0;
                 player.SayBoned();
                 btnStart.Visible = true;
                 tmrPlayMusicAfterGameOver.Enabled = true;
@@ -138,6 +150,7 @@ namespace RRRPG
             // Opponent Dies
             else if (state == 8)
             {
+                points += 100;
                 opponent.SayBoned();
                 btnStart.Visible = true;
                 tmrPlayMusicAfterGameOver.Enabled = true;
@@ -209,6 +222,7 @@ namespace RRRPG
                 return false;
             }
             // Player quick time event
+            points += 50;
             return true;
         }
 
@@ -253,11 +267,6 @@ namespace RRRPG
         }
 
         private void picPlayer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }

@@ -53,6 +53,7 @@
             tmrStateMachine = new System.Windows.Forms.Timer(components);
             tmrPlayMusicAfterGameOver = new System.Windows.Forms.Timer(components);
             labelAmmo = new Label();
+            PointsLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -326,12 +327,24 @@
             labelAmmo.TabIndex = 11;
             labelAmmo.Text = "Ammo";
             // 
+            // PointsLabel
+            // 
+            PointsLabel.AutoSize = true;
+            PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            PointsLabel.ForeColor = Color.Gold;
+            PointsLabel.Location = new Point(12, 9);
+            PointsLabel.Name = "PointsLabel";
+            PointsLabel.Size = new Size(88, 25);
+            PointsLabel.TabIndex = 12;
+            PointsLabel.Text = "Points: 0";
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(PointsLabel);
             Controls.Add(labelAmmo);
             Controls.Add(lblPlayerSpeak);
             Controls.Add(lblOpponentSpeak);
@@ -385,5 +398,6 @@
         private PictureBox picWeaponSelectNerfRev;
         private System.Windows.Forms.Timer tmrPlayMusicAfterGameOver;
         private Label labelAmmo;
+        private Label PointsLabel;
     }
 }
