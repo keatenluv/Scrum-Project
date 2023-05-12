@@ -6,6 +6,11 @@
 public enum PullTriggerResult
 {
     /// <summary>
+    /// Happends when there was a bullet in the chamber
+    /// A player still has a chance to dodge
+    /// </summary>
+    FIRED,
+    /// <summary>
     /// This is the default value before we 
     /// conclude what the real value is. Its just
     /// here to initialize the variable and shouldn't be
@@ -130,12 +135,14 @@ public class Weapon
     public PullTriggerResult PullTrigger(Character character)
     {
         PullTriggerResult result = PullTriggerResult.UNKNOWN;
+        if (CurChamberIndex == Chambers.Count)
+            CurChamberIndex = 0;
 
-        float chance = RandNumber();
         if (!Chambers[CurChamberIndex++])
             return PullTriggerResult.DIDNT_GO_OFF;
 
         /* OLD CODE
+        float chance = RandNumber(); 
         if (chance < 1 - character.Stats.Luck)
         {
           chance = RandNumber();

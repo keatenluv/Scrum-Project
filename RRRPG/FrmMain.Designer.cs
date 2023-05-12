@@ -52,6 +52,7 @@
             lblPlayerSpeak = new Label();
             tmrStateMachine = new System.Windows.Forms.Timer(components);
             tmrPlayMusicAfterGameOver = new System.Windows.Forms.Timer(components);
+            labelAmmo = new Label();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -314,12 +315,24 @@
             tmrPlayMusicAfterGameOver.Interval = 2000;
             tmrPlayMusicAfterGameOver.Tick += tmrPlayMusicAfterGameOver_Tick;
             // 
+            // labelAmmo
+            // 
+            labelAmmo.AutoSize = true;
+            labelAmmo.BackColor = Color.White;
+            labelAmmo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAmmo.Location = new Point(388, 361);
+            labelAmmo.Name = "labelAmmo";
+            labelAmmo.Size = new Size(90, 32);
+            labelAmmo.TabIndex = 11;
+            labelAmmo.Text = "Ammo";
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(labelAmmo);
             Controls.Add(lblPlayerSpeak);
             Controls.Add(lblOpponentSpeak);
             Controls.Add(btnStart);
@@ -371,5 +384,6 @@
         private Label lblWeaponSelectNerfRev;
         private PictureBox picWeaponSelectNerfRev;
         private System.Windows.Forms.Timer tmrPlayMusicAfterGameOver;
+        private Label labelAmmo;
     }
 }

@@ -24,6 +24,7 @@ namespace RRRPG
         {
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
             soundPlayer.PlayLooping();
+            //labelAmmo.Visible = false;
             btnDoIt.Visible = false;
             lblOpponentSpeak.Visible = false;
             lblPlayerSpeak.Visible = false;
@@ -117,8 +118,8 @@ namespace RRRPG
                     //Opponent did not dodge
                     if (!QuickTimeEvent(opponent))
                     {
-                        player.ShowKill();
-                        player.SayGunWentOff();
+                        opponent.ShowKill();
+                        opponent.SayGunWentOff();
                         state = 7;
                     }
                 }
@@ -151,7 +152,7 @@ namespace RRRPG
             if (player.PullTrigger(weapon))
             {
                 //Player failed Quick Time event
-                if (QuickTimeEvent(player))
+                if (!QuickTimeEvent(player))
                 {
                     player.ShowKill();
                     player.SayGunWentOff();
@@ -184,6 +185,11 @@ namespace RRRPG
             weaponSelectMap[type].pic.BorderStyle = BorderStyle.Fixed3D;
             weaponSelectMap[type].lbl.ForeColor = selectedColor;
             weapon = Weapon.MakeWeapon(type);
+            //DEBUG
+            string ammo = "";
+            weapon.Chambers.ForEach(item => ammo += $",{item} ");
+            labelAmmo.Text = ammo;
+            //END
             opponent = Character.MakeOpponent(type, picOpponent, lblOpponentSpeak);
             player = Character.MakePlayer(type, picPlayer, lblPlayerSpeak);
             this.BackgroundImage = weaponBackgroundMap[type];
@@ -196,7 +202,7 @@ namespace RRRPG
             if (character.Type == "opponent")
             {
                 //Simulate chance of opponent to dodge
-                if (weapon.RandNumber() < character.Stats.Reflex)
+                if (weapon.RandNumber() == character.Stats.Reflex)
                     return true;
 
                 return false;
@@ -246,6 +252,11 @@ namespace RRRPG
         }
 
         private void picPlayer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

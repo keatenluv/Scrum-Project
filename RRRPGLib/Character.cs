@@ -109,7 +109,6 @@ public class Character
     public bool PullTrigger(Weapon weapon)
     {
         var result = weapon.PullTrigger(this);
-        Say($"{weapon.CurChamberIndex}");
         if (result == PullTriggerResult.DIDNT_GO_OFF)
             return false;
 
