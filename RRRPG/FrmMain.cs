@@ -121,6 +121,7 @@ namespace RRRPG
                         opponent.ShowKill();
                         opponent.SayGunWentOff();
                         state = 7;
+                        return;
                     }
                 }
                 opponent.ShowNoWeapon();
