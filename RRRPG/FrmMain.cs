@@ -148,6 +148,7 @@ namespace RRRPG
 
         private void btnDoIt_Click(object sender, EventArgs e)
         {
+            SoundPlayer playClick = new SoundPlayer(Resources.Gun_Dry_Fire_Sound_Effect);
             if (player.PullTrigger(weapon))
             {
                 state = 3;
@@ -159,6 +160,7 @@ namespace RRRPG
                 state = 5;
                 tmrStateMachine.Interval = 1500;
                 tmrStateMachine.Enabled = true;
+                playClick.Play();                
             }
             btnDoIt.Visible = false;
         }

@@ -334,4 +334,7 @@
   <data name="Yoshi_Dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Images\Yoshi_Dying.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Gun_Dry_Fire_Sound_Effect" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\Gun Dry Fire Sound Effect.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
