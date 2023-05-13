@@ -377,6 +377,16 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap muted {
+            get {
+                object obj = ResourceManager.GetObject("muted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nerf_death {
             get {
                 object obj = ResourceManager.GetObject("nerf_death", resourceCulture);
@@ -428,6 +438,36 @@ namespace RRRPG.Properties {
         internal static System.Drawing.Bitmap Nerk_Kid_Ready {
             get {
                 object obj = ResourceManager.GetObject("Nerk_Kid_Ready", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_muted {
+            get {
+                object obj = ResourceManager.GetObject("not_muted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_muted1 {
+            get {
+                object obj = ResourceManager.GetObject("not_muted1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_muted2 {
+            get {
+                object obj = ResourceManager.GetObject("not_muted2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

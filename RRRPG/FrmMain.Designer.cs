@@ -35,6 +35,7 @@
             btnDoIt = new Button();
             lblPlayer = new Label();
             lblOpponent = new Label();
+            btnMute = new Button();
             picWeaponSelectMagicWand = new PictureBox();
             lblWeaponSelectMagicWand = new Label();
             panWeaponSelect = new Panel();
@@ -61,6 +62,13 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).BeginInit();
             SuspendLayout();
+            //
+            // btnMute
+            //
+            btnMute.Image = Properties.Resources.not_muted;
+            btnMute.Location = new Point(0, 0);
+            btnMute.Size = new Size(50, 48);
+            btnMute.Click += btnMute_Click;
             // 
             // picOpponent
             // 
@@ -329,6 +337,7 @@
             Controls.Add(btnDoIt);
             Controls.Add(picPlayer);
             Controls.Add(picOpponent);
+            Controls.Add(btnMute);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
             Text = "Russian Roulette RPG";
@@ -354,6 +363,7 @@
         private Button btnDoIt;
         private Label lblPlayer;
         private Label lblOpponent;
+        private Button btnMute;
         private PictureBox picWeaponSelectMagicWand;
         private Label lblWeaponSelectMagicWand;
         private Panel panWeaponSelect;

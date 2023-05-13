@@ -23,7 +23,14 @@ namespace RRRPG
         private void FrmMain_Load(object sender, EventArgs e)
         {
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
-            soundPlayer.PlayLooping();
+            if (global::RRRPG.FrmTitle.isMuted)
+            {
+                btnMute.Image = Resources.muted;
+            }
+            else
+            {
+                soundPlayer.PlayLooping();
+            }
             btnDoIt.Visible = false;
             lblOpponentSpeak.Visible = false;
             lblPlayerSpeak.Visible = false;
@@ -209,6 +216,24 @@ namespace RRRPG
             tmrPlayMusicAfterGameOver.Enabled = false;
         }
 
+        private void btnMute_Click(object sender, EventArgs e)
+        {
+            if (state == -1)
+            {
+                if (global::RRRPG.FrmTitle.isMuted)
+                {
+                    global::RRRPG.FrmTitle.isMuted = false;
+                    btnMute.Image = Resources.not_muted;
+                    soundPlayer.PlayLooping();
+                }
+                else
+                {
+                    global::RRRPG.FrmTitle.isMuted = true;
+                    btnMute.Image = Resources.muted;
+                    soundPlayer.Stop();
+                }
+            }
+        }
         private void picPlayer_Click(object sender, EventArgs e)
         {
 

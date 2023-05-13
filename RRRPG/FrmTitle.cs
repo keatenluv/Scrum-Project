@@ -6,6 +6,8 @@ namespace RRRPG;
 
 public partial class FrmTitle : Form {
   private SoundPlayer soundPlayer;
+  public static bool isMuted = false;
+  
   public FrmTitle() {
     InitializeComponent();
   }
@@ -28,5 +30,19 @@ public partial class FrmTitle : Form {
   private void FrmTitle_FormClosed(object sender, FormClosedEventArgs e) {
     FormManager.openForms.Remove(this);
     FormManager.CloseAll();
+  }
+
+  private void btnMute_Click(object sender, EventArgs e)
+  {
+    if (isMuted){
+        isMuted = false;
+        soundPlayer.PlayLooping();
+        btnMute.Image = Resources.not_muted;
+    }
+    else{
+        isMuted = true;
+        soundPlayer.Stop();
+        btnMute.Image = Resources.muted;
+    }
   }
 }
