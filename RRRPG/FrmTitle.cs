@@ -45,4 +45,18 @@ public partial class FrmTitle : Form {
         btnMute.Image = Resources.muted;
     }
   }
+
+    private void btnSettings_Click(object sender, EventArgs e)
+    {
+        Hide();
+        soundPlayer.Stop();
+        Setting setting = new Setting();
+        setting.Owner = this;
+        setting.ShowDialog();
+        setting.Text = "Settings";
+        /*using (Setting setting = new Setting())
+        {
+            setting.ShowDialog();
+        }*/
+    }
 }

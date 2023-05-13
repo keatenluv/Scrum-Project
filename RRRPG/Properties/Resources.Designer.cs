@@ -63,6 +63,16 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_button {
+            get {
+                object obj = ResourceManager.GetObject("back_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bender_dying_nerf {
             get {
                 object obj = ResourceManager.GetObject("bender_dying_nerf", resourceCulture);
@@ -496,6 +506,16 @@ namespace RRRPG.Properties {
         internal static System.Drawing.Bitmap Rambo {
             get {
                 object obj = ResourceManager.GetObject("Rambo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Background {
+            get {
+                object obj = ResourceManager.GetObject("Settings_Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

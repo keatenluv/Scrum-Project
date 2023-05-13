@@ -26,6 +26,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTitle));
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnMute = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlay
@@ -54,6 +55,22 @@
             this.btnMute.UseVisualStyleBackColor = true;
             this.btnMute.Click += new System.EventHandler(this.btnMute_Click);
             // 
+            // btnSettings
+            // 
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.btnSettings.BackgroundImage = global::RRRPG.Properties.Resources.Img_Title_Play_Button;
+            this.btnSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSettings.Location = new System.Drawing.Point(66, 598);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(235, 76);
+            this.btnSettings.TabIndex = 2;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = false;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
             // FrmTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -62,6 +79,7 @@
             this.BackgroundImage = global::RRRPG.Properties.Resources.Img_Title;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(980, 725);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnMute);
             this.Controls.Add(this.btnPlay);
             this.DoubleBuffered = true;
@@ -78,5 +96,6 @@
 
     private Button btnPlay;
         private Button btnMute;
+        private Button btnSettings;
     }
 }
