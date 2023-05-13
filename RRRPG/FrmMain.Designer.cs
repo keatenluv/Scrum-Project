@@ -66,7 +66,7 @@
             // btnMute
             //
             btnMute.Image = Properties.Resources.not_muted;
-            btnMute.Location = new Point(0, 0);
+            btnMute.Location = new Point(1073, 0);
             btnMute.Size = new Size(50, 48);
             btnMute.Click += btnMute_Click;
             // 

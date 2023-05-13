@@ -47,7 +47,7 @@
             // btnMute
             // 
             this.btnMute.Image = global::RRRPG.Properties.Resources.not_muted;
-            this.btnMute.Location = new System.Drawing.Point(0, 0);
+            this.btnMute.Location = new System.Drawing.Point(931, 0);
             this.btnMute.Name = "btnMute";
             this.btnMute.Size = new System.Drawing.Size(50, 48);
             this.btnMute.TabIndex = 1;
