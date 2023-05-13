@@ -7,6 +7,7 @@ namespace RRRPG
     public partial class FrmMain : Form
     {
         private SoundPlayer soundPlayer;
+        private bool debug;
         private int state;
         private int _points;
         private int points
@@ -32,6 +33,8 @@ namespace RRRPG
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            debug = false;
+            KeyPreview = true;
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
             soundPlayer.PlayLooping();
             //labelAmmo.Visible = false;
@@ -199,11 +202,12 @@ namespace RRRPG
             weaponSelectMap[type].pic.BorderStyle = BorderStyle.Fixed3D;
             weaponSelectMap[type].lbl.ForeColor = selectedColor;
             weapon = Weapon.MakeWeapon(type);
-            //DEBUG
-            string ammo = "";
-            weapon.Chambers.ForEach(item => ammo += $",{item} ");
-            labelAmmo.Text = ammo;
-            //END
+            if (debug)
+            {
+                string ammo = "";
+                weapon.Chambers.ForEach(item => ammo += $",{item} ");
+                labelAmmo.Text = ammo;
+            }
             opponent = Character.MakeOpponent(type, picOpponent, lblOpponentSpeak);
             player = Character.MakePlayer(type, picPlayer, lblPlayerSpeak);
             this.BackgroundImage = weaponBackgroundMap[type];
@@ -216,14 +220,21 @@ namespace RRRPG
             if (character.Type == "opponent")
             {
                 //Simulate chance of opponent to dodge
-                if (weapon.RandNumber() == character.Stats.Reflex)
+                if (weapon.RandNumber() < character.Stats.Reflex)
                     return true;
 
                 return false;
             }
-            // Player quick time event
+            //this.KeyPress += FrmMain_KeyPress;
+            // Player quick time event currently always passes
             points += 50;
+            //this.KeyPress -= FrmMain_KeyPress;
             return true;
+        }
+
+        private void FrmMain_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show(e.KeyChar.ToString());
         }
 
         private void picWeaponSelectMagicWand_Click(object sender, EventArgs e)
