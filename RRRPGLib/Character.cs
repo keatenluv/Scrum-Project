@@ -219,9 +219,9 @@ public class Character {
     c.dialogMap = new() {
 
       {TalkState.TALK_SMACK, ("YOSHI", Resources.GetStream("yoshi")) },
-      {TalkState.SAY_OW, ("", null) },
-      {TalkState.BONED, ("", Resources.GetStream("yoshi_tongue")) },
-      {TalkState.GUN_WENT_OFF, ("", Resources.GetStream("yoshi_tongue")) },
+      {TalkState.SAY_OW, ("", Resources.GetStream("yoshi_tongue")) },
+      {TalkState.BONED, ("", Resources.GetStream("discord_leave")) },
+      {TalkState.GUN_WENT_OFF, ("",  Resources.GetStream("discord_leave")) },
       {TalkState.SURVIVED, ("", null) },
     };
     return c;

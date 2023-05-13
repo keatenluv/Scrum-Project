@@ -83,6 +83,15 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
+        internal static System.IO.UnmanagedMemoryStream discord_leave {
+            get {
+                return ResourceManager.GetStream("discord_leave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
         internal static System.IO.UnmanagedMemoryStream FireGoblin1 {
             get {
                 return ResourceManager.GetStream("FireGoblin1", resourceCulture);

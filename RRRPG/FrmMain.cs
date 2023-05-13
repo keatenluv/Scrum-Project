@@ -101,7 +101,10 @@ namespace RRRPG
             {
                 player.SayBoned();
                 btnStart.Visible = true;
-                tmrPlayMusicAfterGameOver.Enabled = true;
+                if (!global::RRRPG.FrmTitle.isMuted)
+                {
+                    tmrPlayMusicAfterGameOver.Enabled = true;
+                }
                 panWeaponSelect.Visible = true;
                 state = -1;
                 tmrStateMachine.Enabled = false;
@@ -133,7 +136,10 @@ namespace RRRPG
             {
                 opponent.SayBoned();
                 btnStart.Visible = true;
-                tmrPlayMusicAfterGameOver.Enabled = true;
+                if (!global::RRRPG.FrmTitle.isMuted)
+                {
+                    tmrPlayMusicAfterGameOver.Enabled = true;
+                }
                 panWeaponSelect.Visible = true;
                 state = -1;
                 tmrStateMachine.Enabled = false;

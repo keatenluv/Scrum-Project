@@ -220,9 +220,6 @@
   <data name="YOU_GOT_TROUBLE" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Audio\YOU_GOT_TROUBLE.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Nerf_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Data\Images\Nerf_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Img_Cork_Gun" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\images\img_cork_gun.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -268,9 +265,6 @@
   <data name="Wizard3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Wizard3.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="bender_dying_nerf" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Data\Images\bender_dying_nerf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="nerf_death1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Audio\nerf_death.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -291,9 +285,6 @@
   </data>
   <data name="willyWonka" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\willyWonka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="nerf_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Data\Images\nerf_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="willyWonkaDies" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\willyWonkaDies.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,9 +310,6 @@
   <data name="Img_Bender_Idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\images\img_bender_idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Yoshi_Dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Yoshi_Dying.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Img_Nerf_Revolver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\data\images\img_nerf_revolver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -330,5 +318,20 @@
   </data>
   <data name="not_muted2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Data\Images\not_muted.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bender_dying_nerf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\bender_dying_nerf.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="discord_leave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Audio\discord-leave.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nerf_death" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\nerf_death.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Nerf_Kid_Ready" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Nerf_Kid_Ready.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yoshi_Dying" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Data\Images\Yoshi_Dying.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
