@@ -72,11 +72,11 @@ public class Character {
         // Assign specific names based on the weapon type
         c.Name = weaponType switch
         {
-            WeaponType.CORK_GUN => "Willy Wonka",
-            WeaponType.MAGIC_WAND => "Gandalf",
-            WeaponType.WATER_GUN => "Fizz",
-            WeaponType.NERF_REVOLVER => "Robert",
-            WeaponType.BOW => "Yoshi",
+            WeaponType.CORK_GUN => "Willy Wonka    ",
+            WeaponType.MAGIC_WAND => "   Gandalf   ",
+            WeaponType.WATER_GUN => "    Fizz     ",
+            WeaponType.NERF_REVOLVER => "    Robert    ",
+            WeaponType.BOW => "   Yoshi   ",
             _ => c.Name // Use the default name if no specific name is defined
         } ;
 

@@ -103,26 +103,25 @@
             // lblPlayer
             // 
             lblPlayer.AutoSize = true;
-            lblPlayer.BackColor = Color.ForestGreen;
-            lblPlayer.BorderStyle = BorderStyle.Fixed3D;
-            lblPlayer.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(186, 98);
+            lblPlayer.BackColor = Color.Transparent;
+            lblPlayer.FlatStyle = FlatStyle.Popup;
+            lblPlayer.Font = new Font("Tempus Sans ITC", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPlayer.ForeColor = Color.Cyan;
+            lblPlayer.Location = new Point(136, 100);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(87, 34);
+            lblPlayer.Size = new Size(171, 62);
             lblPlayer.TabIndex = 3;
-            lblPlayer.Text = "Player";
+            lblPlayer.Text = "Bender";
             // 
             // lblOpponent
             // 
             lblOpponent.AutoSize = true;
-            lblOpponent.BackColor = Color.Firebrick;
-            lblOpponent.BorderStyle = BorderStyle.Fixed3D;
-            lblOpponent.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblOpponent.ForeColor = Color.White;
-            lblOpponent.Location = new Point(761, 50);
+            lblOpponent.BackColor = Color.Transparent;
+            lblOpponent.Font = new Font("Viner Hand ITC", 26.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblOpponent.ForeColor = Color.IndianRed;
+            lblOpponent.Location = new Point(761, 34);
             lblOpponent.Name = "lblOpponent";
-            lblOpponent.Size = new Size(131, 34);
+            lblOpponent.Size = new Size(180, 57);
             lblOpponent.TabIndex = 4;
             lblOpponent.Text = "Opponent";
             // 
@@ -335,10 +334,10 @@
             textBox1.BackColor = Color.Navy;
             textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             textBox1.ForeColor = Color.Yellow;
-            textBox1.Location = new Point(507, 500);
+            textBox1.Location = new Point(507, 529);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(126, 107);
+            textBox1.Size = new Size(142, 92);
             textBox1.TabIndex = 12;
             // 
             // textBox2
@@ -346,10 +345,10 @@
             textBox2.BackColor = Color.Black;
             textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             textBox2.ForeColor = Color.Red;
-            textBox2.Location = new Point(751, 500);
+            textBox2.Location = new Point(741, 529);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(141, 107);
+            textBox2.Size = new Size(141, 92);
             textBox2.TabIndex = 13;
             // 
             // textBox3
@@ -357,20 +356,20 @@
             textBox3.BackColor = Color.FromArgb(192, 0, 192);
             textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             textBox3.ForeColor = Color.White;
-            textBox3.Location = new Point(630, 500);
+            textBox3.Location = new Point(629, 529);
             textBox3.Multiline = true;
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 107);
+            textBox3.Size = new Size(136, 92);
             textBox3.TabIndex = 14;
             // 
             // textBox4
             // 
             textBox4.BackColor = Color.FromArgb(0, 192, 192);
             textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            textBox4.Location = new Point(872, 500);
+            textBox4.Location = new Point(848, 529);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(136, 107);
+            textBox4.Size = new Size(136, 92);
             textBox4.TabIndex = 15;
             // 
             // textBox5
@@ -378,10 +377,10 @@
             textBox5.BackColor = Color.FromArgb(128, 255, 128);
             textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             textBox5.ForeColor = Color.FromArgb(255, 128, 0);
-            textBox5.Location = new Point(959, 500);
+            textBox5.Location = new Point(959, 529);
             textBox5.Multiline = true;
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(132, 107);
+            textBox5.Size = new Size(132, 92);
             textBox5.TabIndex = 16;
             // 
             // back

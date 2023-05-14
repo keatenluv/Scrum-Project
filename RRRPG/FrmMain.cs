@@ -57,6 +57,7 @@ namespace RRRPG
             picOpponent.BackColor = Color.Transparent;
             picPlayer.BackColor = Color.Transparent;
 
+
             //magicwand stat initialization
             textBox1.Visible = false;
 
@@ -368,5 +369,7 @@ namespace RRRPG
             FrmTitle frmTitle = new FrmTitle();
             frmTitle.Show();
         }
+
+
     }
 }
