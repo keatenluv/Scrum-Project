@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static RRRPGLib.ResourcesRef;
 using ImgState = RRRPGLib.CharacterImgStateType;
 using TalkState = RRRPGLib.CharacterTalkStateType;
@@ -10,11 +11,15 @@ namespace RRRPGLib;
 /// Standard class for creating a character
 /// </summary>
 public class Character {
-  #region Public Fields / Properties
-  /// <summary>
-  /// Holds the stats for this character
-  /// </summary>
-  public Stats Stats { get; private set; }
+    #region Public Fields / Properties
+    /// <summary>
+    /// Holds the stats for this character
+    /// </summary>
+ // Public property for the opponent's name
+    public string Name { get; set; }
+
+
+    public Stats Stats { get; private set; }
   #endregion
 
   #region Private Fields / Properties
@@ -40,12 +45,13 @@ public class Character {
   /// <param name="pic">Holds the picture box for the character</param>
   /// <param name="lblTalk">Holds the label to contain character's dialog</param>
   public Character(PictureBox pic, Label lblTalk) {
+    
     this.pic = pic;
     this.lblTalk = lblTalk;
     this.fortitude = FortitudeType.NORMAL;
   }
   #endregion
-
+ 
   #region Public Methods
   /// <summary>
   /// Create an opponent suitable for the given weapon
@@ -62,7 +68,19 @@ public class Character {
       WeaponType.CORK_GUN => MakeCorkGunOpponent(),
       WeaponType.WATER_GUN => MakeWaterGunOpponent(),
     };
-    c.pic = pic;
+
+        // Assign specific names based on the weapon type
+        c.Name = weaponType switch
+        {
+            WeaponType.CORK_GUN => "Willy Wonka",
+            WeaponType.MAGIC_WAND => "Gandalf",
+            WeaponType.WATER_GUN => "Fizz",
+            WeaponType.NERF_REVOLVER => "Robert",
+            WeaponType.BOW => "Yoshi",
+            _ => c.Name // Use the default name if no specific name is defined
+        } ;
+
+        c.pic = pic;
     c.lblTalk = lblTalk;
     c.ShowIdle();
     c.Shutup();
@@ -84,19 +102,20 @@ public class Character {
       WeaponType.CORK_GUN => MakeCorkGunPlayer(),
       WeaponType.WATER_GUN => MakeWaterGunPlayer(),
     };
+        
     c.pic = pic;
     c.lblTalk = lblTalk;
     c.ShowIdle();
     c.Shutup();
     return c;
   }
-
-  /// <summary>
-  /// Handles what happens when the character pulls the trigger of the weapon
-  /// </summary>
-  /// <param name="weapon">Weapon in play</param>
-  /// <returns>True if the character got shot, false otherwise</returns>
-  public bool PullTrigger(Weapon weapon) {
+    
+    /// <summary>
+    /// Handles what happens when the character pulls the trigger of the weapon
+    /// </summary>
+    /// <param name="weapon">Weapon in play</param>
+    /// <returns>True if the character got shot, false otherwise</returns>
+    public bool PullTrigger(Weapon weapon) {
     var result = weapon.PullTrigger(this);
     //Say(result.ToString());
     switch (result) {

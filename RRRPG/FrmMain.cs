@@ -229,6 +229,9 @@ namespace RRRPG
             this.BackgroundImage = weaponBackgroundMap[type];
             this.BackgroundImageLayout = ImageLayout.Stretch;
             textBox1.Text = GetWeaponStats(weapon);
+
+            // Set the opponent's name and update the label text         
+            lblOpponent.Text = opponent.Name;
         }
         //method that gets stats for each weapon type
         private string GetWeaponStats(Weapon weapon)
