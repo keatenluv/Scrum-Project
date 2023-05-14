@@ -320,8 +320,8 @@ namespace RRRPG
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FormManager.openForms.Remove(this);
-            FormManager.CloseAll();
+            Application.Exit();
+
         }
 
         private void tmrPlayMusicAfterGameOver_Tick(object sender, EventArgs e)
@@ -354,6 +354,16 @@ namespace RRRPG
         private void picPlayer_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            // Close the current form
+            this.Hide();
+
+            // Open FrmTitle
+            FrmTitle frmTitle = new FrmTitle();
+            frmTitle.Show();
         }
     }
 }

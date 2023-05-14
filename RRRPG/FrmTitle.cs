@@ -33,9 +33,8 @@ public partial class FrmTitle : Form {
   }
 
   private void FrmTitle_FormClosed(object sender, FormClosedEventArgs e) {
-    FormManager.openForms.Remove(this);
-    FormManager.CloseAll();
-  }
+        Application.Exit();
+    }
 
   private void btnMute_Click(object sender, EventArgs e)
   {

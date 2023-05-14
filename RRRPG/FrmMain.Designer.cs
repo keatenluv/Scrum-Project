@@ -58,6 +58,7 @@
             textBox3 = new TextBox();
             textBox4 = new TextBox();
             textBox5 = new TextBox();
+            back = new Button();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -383,12 +384,24 @@
             textBox5.Size = new Size(132, 107);
             textBox5.TabIndex = 16;
             // 
+            // back
+            // 
+            back.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.Location = new Point(2, 5);
+            back.Name = "back";
+            back.Size = new Size(75, 35);
+            back.TabIndex = 17;
+            back.Text = "<- Title";
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(back);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(textBox3);
@@ -452,5 +465,6 @@
         private TextBox textBox3;
         private TextBox textBox4;
         private TextBox textBox5;
+        private Button back;
     }
 }
