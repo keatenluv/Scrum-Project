@@ -23,7 +23,12 @@ public partial class FrmTitle : Form {
 
   private void FrmTitle_Load(object sender, EventArgs e) {
     soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music_3);
-    soundPlayer.PlayLooping();
+    if (!isMuted)
+    {
+        soundPlayer.PlayLooping();
+
+    }
+    else { btnMute.Image = Resources.muted; }
     FormManager.openForms.Add(this);
   }
 
