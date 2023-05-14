@@ -53,6 +53,11 @@
             lblPlayerSpeak = new Label();
             tmrStateMachine = new System.Windows.Forms.Timer(components);
             tmrPlayMusicAfterGameOver = new System.Windows.Forms.Timer(components);
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -62,13 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).BeginInit();
             SuspendLayout();
-            //
-            // btnMute
-            //
-            btnMute.Image = Properties.Resources.not_muted;
-            btnMute.Location = new Point(1073, 0);
-            btnMute.Size = new Size(50, 48);
-            btnMute.Click += btnMute_Click;
             // 
             // picOpponent
             // 
@@ -126,6 +124,15 @@
             lblOpponent.Size = new Size(131, 34);
             lblOpponent.TabIndex = 4;
             lblOpponent.Text = "Opponent";
+            // 
+            // btnMute
+            // 
+            btnMute.Image = Properties.Resources.not_muted;
+            btnMute.Location = new Point(1073, 0);
+            btnMute.Name = "btnMute";
+            btnMute.Size = new Size(50, 48);
+            btnMute.TabIndex = 11;
+            btnMute.Click += btnMute_Click;
             // 
             // picWeaponSelectMagicWand
             // 
@@ -322,12 +329,71 @@
             tmrPlayMusicAfterGameOver.Interval = 2000;
             tmrPlayMusicAfterGameOver.Tick += tmrPlayMusicAfterGameOver_Tick;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Navy;
+            textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Yellow;
+            textBox1.Location = new Point(507, 500);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(126, 107);
+            textBox1.TabIndex = 12;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.Black;
+            textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox2.ForeColor = Color.Red;
+            textBox2.Location = new Point(751, 500);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(141, 107);
+            textBox2.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(192, 0, 192);
+            textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.ForeColor = Color.White;
+            textBox3.Location = new Point(630, 500);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(125, 107);
+            textBox3.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.FromArgb(0, 192, 192);
+            textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox4.Location = new Point(872, 500);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(136, 107);
+            textBox4.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.FromArgb(128, 255, 128);
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox5.ForeColor = Color.FromArgb(255, 128, 0);
+            textBox5.Location = new Point(959, 500);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(132, 107);
+            textBox5.TabIndex = 16;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(textBox5);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(lblPlayerSpeak);
             Controls.Add(lblOpponentSpeak);
             Controls.Add(btnStart);
@@ -381,5 +447,10 @@
         private Label lblWeaponSelectNerfRev;
         private PictureBox picWeaponSelectNerfRev;
         private System.Windows.Forms.Timer tmrPlayMusicAfterGameOver;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox textBox5;
     }
 }
