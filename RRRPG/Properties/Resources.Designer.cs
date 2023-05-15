@@ -703,9 +703,9 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wonkaWave {
+        internal static System.Drawing.Bitmap wonkaWave3 {
             get {
-                object obj = ResourceManager.GetObject("wonkaWave", resourceCulture);
+                object obj = ResourceManager.GetObject("wonkaWave3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -713,9 +713,9 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap wonkaWave1 {
+        internal static System.Drawing.Bitmap wonkaWave4 {
             get {
-                object obj = ResourceManager.GetObject("wonkaWave1", resourceCulture);
+                object obj = ResourceManager.GetObject("wonkaWave4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

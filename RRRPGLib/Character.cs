@@ -212,7 +212,7 @@ public class Character {
     Character c = new Character();
     c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
     c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("wonkaWave1") as Bitmap },
+      {ImgState.IDLE, Resources.GetObject("wonkaWave4") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
       {ImgState.READY, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.KILL, Resources.GetObject("wonka_dying") as Bitmap },
