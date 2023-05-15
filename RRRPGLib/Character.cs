@@ -126,6 +126,11 @@ public class Character
         return true;
     }
 
+    public string GetCharacterStats()
+    {
+        return $"Stats: \nHealth: {Stats.Health} \nReflex: {Stats.Reflex} \nLuck: {Stats.Luck}";
+    }
+
     /// <summary>
     /// Allows the character to say the dialog that goes with the <see cref="TalkState.TALK_SMACK"/> state
     /// </summary>

@@ -40,13 +40,14 @@ namespace RRRPG
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            panel1.Visible = false;
+            g = panel1.CreateGraphics();
             labelAmmo.MaximumSize = panel1.Size;
             labelAmmo.AutoSize = true;
             token = tokenSource.Token;
             debug = false;
             labelAmmo.Visible = debug;
             KeyPreview = true;
-            g = panel1.CreateGraphics();
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
             if (global::RRRPG.FrmTitle.isMuted)
             {
@@ -149,6 +150,7 @@ namespace RRRPG
         private void tmrDialog_Tick(object sender, EventArgs e)
         {
             labelAmmo.Visible = false;
+            panel1.BackColor = Color.Transparent;
             if (state == 0)
             {
                 opponent.Shutup();
@@ -246,7 +248,7 @@ namespace RRRPG
                 {
                     player.ShowKill();
                     player.SayGunWentOff();
-                    btnDoIt.Enabled = false;
+                    btnDoIt.Visible = false;
                     state = 3;
                     tmrStateMachine.Interval = 2200;
                     tmrStateMachine.Enabled = true;
@@ -334,6 +336,7 @@ namespace RRRPG
             int reactionTime = (int)((1.0f - weapon.Velocity + character.Stats.Reflex) * 1000);
             //MessageBox.Show($"{reactionTime}");
             this.KeyPress += FrmMain_KeyPress;
+            panel1.Visible = true;
             tmrQuickTimeAnimation.Interval = reactionTime / (panel1.Width / (rect.Width - 2)); // div by number of rects we need
             tmrQuickTimeAnimation.Start();
             var result = false;
@@ -357,7 +360,8 @@ namespace RRRPG
         private void ResetQuickActionAnimation()
         {
             tmrQuickTimeAnimation.Stop();
-            g.Clear(panel1.BackColor);
+            panel1.Visible = false;
+            g.Clear(Color.Transparent);
             g.ResetTransform();
         }
 

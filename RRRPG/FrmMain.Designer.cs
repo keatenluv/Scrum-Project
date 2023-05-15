@@ -73,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectNerfRev).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).BeginInit();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // picOpponent
@@ -342,7 +341,7 @@
             labelAmmo.BackColor = Color.Black;
             labelAmmo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             labelAmmo.ForeColor = Color.Green;
-            labelAmmo.Location = new Point(3, 0);
+            labelAmmo.Location = new Point(375, 355);
             labelAmmo.Name = "labelAmmo";
             labelAmmo.Size = new Size(380, 32);
             labelAmmo.TabIndex = 11;
@@ -365,7 +364,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(labelAmmo);
+            panel1.BackColor = Color.Black;
             panel1.Location = new Point(376, 406);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 100);
@@ -467,6 +466,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(labelAmmo);
             Controls.Add(lblWeather);
             Controls.Add(btnWeather);
             Controls.Add(back);
@@ -502,8 +502,6 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectNerfRev).EndInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).EndInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
