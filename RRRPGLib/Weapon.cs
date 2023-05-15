@@ -137,42 +137,16 @@ public class Weapon
     /// <returns>A <see cref="PullTriggerResult"/> enum value that denotes the result</returns>
     public PullTriggerResult PullTrigger(Character character)
     {
-        PullTriggerResult result = PullTriggerResult.UNKNOWN;
         if (CurChamberIndex == Chambers.Count)
             CurChamberIndex = 0;
 
         if (!Chambers[CurChamberIndex++])
             return PullTriggerResult.DIDNT_GO_OFF;
 
-        /* OLD CODE
-        float chance = RandNumber(); 
-        if (chance < 1 - character.Stats.Luck)
-        {
-          chance = RandNumber();
-          if (chance >= ChanceOfMisfire)
-          {
-            float chanceToDodge = Math.Max(0, character.Stats.Reflex - Velocity);
-            chance = RandNumber();
-            if (chance < chanceToDodge)
-            {
-              result = PullTriggerResult.WENT_OFF_BUT_DODGED;
-            }
-            else
-            {
-              result = PullTriggerResult.GOT_SHOT;
-            }
-          }
-          else
-          {
-            result = PullTriggerResult.MISFIRE;
-          }
-        }
-        else
-        {
-          result = PullTriggerResult.DIDNT_GO_OFF;
-        }
-        */
-        return result;
+        if (ChanceOfMisfire < rand.NextSingle())
+            return PullTriggerResult.DIDNT_GO_OFF;
+
+        return PullTriggerResult.UNKNOWN;
     }
     /// <summary>
     /// Instead of using the constructor, use this method to create a new
