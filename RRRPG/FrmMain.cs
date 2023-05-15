@@ -41,7 +41,8 @@ namespace RRRPG
         private void FrmMain_Load(object sender, EventArgs e)
         {
             token = tokenSource.Token;
-            debug = false;
+            debug = true;
+            labelAmmo.Visible = debug;
             KeyPreview = true;
             g = panel1.CreateGraphics();
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
@@ -326,7 +327,7 @@ namespace RRRPG
                 return false;
             }
             int reactionTime = (int)((1.0f - weapon.Velocity + character.Stats.Reflex) * 1000);
-            MessageBox.Show($"{reactionTime}");
+            //MessageBox.Show($"{reactionTime}");
             this.KeyPress += FrmMain_KeyPress;
             tmrQuickTimeAnimation.Interval = reactionTime / (panel1.Width / (rect.Width - 2)); // div by number of rects we need
             tmrQuickTimeAnimation.Start();
@@ -339,6 +340,8 @@ namespace RRRPG
             {
                 result = true;
             }
+            tokenSource = new();
+            token = tokenSource.Token;
             ResetQuickActionAnimation();
             tmrQuickTimeAnimation.Stop();
             this.KeyPress -= FrmMain_KeyPress;
@@ -349,7 +352,7 @@ namespace RRRPG
         private void ResetQuickActionAnimation()
         {
             tmrQuickTimeAnimation.Stop();
-            g.Clear(TransparencyKey);
+            g.Clear(panel1.BackColor);
             g.ResetTransform();
         }
 
