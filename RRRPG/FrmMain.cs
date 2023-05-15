@@ -50,7 +50,7 @@ namespace RRRPG
             labelAmmo.MaximumSize = panel1.Size;
             labelAmmo.AutoSize = true;
             token = tokenSource.Token;
-            debug = false;
+            debug = true;
             labelAmmo.Visible = debug;
             KeyPreview = true;
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);

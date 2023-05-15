@@ -137,42 +137,16 @@ public class Weapon
     /// <returns>A <see cref="PullTriggerResult"/> enum value that denotes the result</returns>
     public PullTriggerResult PullTrigger(Character character)
     {
-        PullTriggerResult result = PullTriggerResult.UNKNOWN;
         if (CurChamberIndex == Chambers.Count)
             CurChamberIndex = 0;
 
         if (!Chambers[CurChamberIndex++])
             return PullTriggerResult.DIDNT_GO_OFF;
 
-        /* OLD CODE
-        float chance = RandNumber(); 
-        if (chance < 1 - character.Stats.Luck)
-        {
-          chance = RandNumber();
-          if (chance >= ChanceOfMisfire)
-          {
-            float chanceToDodge = Math.Max(0, character.Stats.Reflex - Velocity);
-            chance = RandNumber();
-            if (chance < chanceToDodge)
-            {
-              result = PullTriggerResult.WENT_OFF_BUT_DODGED;
-            }
-            else
-            {
-              result = PullTriggerResult.GOT_SHOT;
-            }
-          }
-          else
-          {
-            result = PullTriggerResult.MISFIRE;
-          }
-        }
-        else
-        {
-          result = PullTriggerResult.DIDNT_GO_OFF;
-        }
-        */
-        return result;
+        if (ChanceOfMisfire > rand.NextSingle())
+            return PullTriggerResult.DIDNT_GO_OFF;
+
+        return PullTriggerResult.UNKNOWN;
     }
     /// <summary>
     /// Instead of using the constructor, use this method to create a new
@@ -226,7 +200,7 @@ public class Weapon
     private static Weapon MakeNerfRev()
     {
         return new Weapon(
-          chambers: new List<bool>(6),
+          chambers: new List<bool>(5),
           type: WeaponType.NERF_REVOLVER,
           chanceOfMisfire: 0.3f,
           damage: 25,
@@ -235,7 +209,7 @@ public class Weapon
     private static Weapon MakeCorkGun()
     {
         return new Weapon(
-          chambers: new List<bool>(4),
+          chambers: new List<bool>(5),
           type: WeaponType.CORK_GUN,
           chanceOfMisfire: 0.4f,
           damage: 40,
@@ -244,7 +218,7 @@ public class Weapon
     private static Weapon MakeWaterGun()
     {
         return new Weapon(
-          chambers: new List<bool>(8),
+          chambers: new List<bool>(5),
           type: WeaponType.WATER_GUN,
           chanceOfMisfire: 0.1f,
           damage: 20,
@@ -253,7 +227,7 @@ public class Weapon
     private static Weapon MakeBow()
     {
         return new Weapon(
-          chambers: new List<bool>(3),
+          chambers: new List<bool>(5),
           type: WeaponType.BOW,
           chanceOfMisfire: 0.2f,
           damage: 50,
