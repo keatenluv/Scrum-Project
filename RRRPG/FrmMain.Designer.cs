@@ -59,6 +59,8 @@
             textBox4 = new TextBox();
             textBox5 = new TextBox();
             back = new Button();
+            btnWeather = new Button();
+            lblWeather = new Label();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -394,12 +396,34 @@
             back.UseVisualStyleBackColor = true;
             back.Click += back_Click;
             // 
+            // btnWeather
+            // 
+            btnWeather.Location = new Point(2, 46);
+            btnWeather.Name = "btnWeather";
+            btnWeather.Size = new Size(85, 32);
+            btnWeather.TabIndex = 18;
+            btnWeather.Text = "GetWeather";
+            btnWeather.UseVisualStyleBackColor = true;
+            btnWeather.Click += btnWeather_Click;
+            // 
+            // lblWeather
+            // 
+            lblWeather.AutoSize = true;
+            lblWeather.BackColor = Color.Transparent;
+            lblWeather.ForeColor = SystemColors.ControlLightLight;
+            lblWeather.Location = new Point(231, 9);
+            lblWeather.Name = "lblWeather";
+            lblWeather.Size = new Size(0, 15);
+            lblWeather.TabIndex = 19;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(lblWeather);
+            Controls.Add(btnWeather);
             Controls.Add(back);
             Controls.Add(textBox5);
             Controls.Add(textBox4);
@@ -465,5 +489,7 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private Button back;
+        private Button btnWeather;
+        private Label lblWeather;
     }
 }

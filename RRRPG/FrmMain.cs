@@ -1,6 +1,9 @@
 using RRRPG.Properties;
 using RRRPGLib;
 using System.Media;
+using System.Net;
+using System.Xml.Linq;
+using Newtonsoft.Json.Linq;
 
 namespace RRRPG
 {
@@ -369,6 +372,45 @@ namespace RRRPG
             FrmTitle frmTitle = new FrmTitle();
             frmTitle.Show();
         }
+
+        private void btnWeather_Click(object sender, EventArgs e)
+        {
+            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // Replace with your OpenWeatherMap API key
+            string city = "Ruston";
+            string state = "Louisiana";
+            string country = "US";
+
+            string url = $"http://api.openweathermap.org/data/2.5/weather?q={city},{state},{country}&appid={apiKey}";
+
+            try
+            {
+                using (WebClient client = new WebClient())
+                {
+                    string response = client.DownloadString(url);
+                    JObject jsonObject = JObject.Parse(response);
+
+                    // Extract the necessary weather information from the JSON response
+                    string description = jsonObject["weather"][0]["description"].ToString();
+                    double temperatureInCelsius = (double)jsonObject["main"]["temp"] - 273.15;
+
+                    // Convert temperature to Fahrenheit and round to two decimal places
+                    double temperatureInFahrenheit = Math.Round(temperatureInCelsius * 9 / 5 + 32, 2);
+
+                    // Display the weather information in lblWeather
+                    lblWeather.Text = $"Weather in {city}, {state}, {country}:{Environment.NewLine}Description: {description}{Environment.NewLine}Temperature: {temperatureInFahrenheit}°F";
+
+                    // Set the background image for lblWeather
+                    lblWeather.BackgroundImage = RRRPG.Properties.Resources.rain;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblWeather.Text = $"Error retrieving weather information: {ex.Message}";
+            }
+        }
+
+
+
 
 
     }
