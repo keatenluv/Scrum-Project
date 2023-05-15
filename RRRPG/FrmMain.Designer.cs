@@ -54,6 +54,8 @@
             tmrPlayMusicAfterGameOver = new System.Windows.Forms.Timer(components);
             labelAmmo = new Label();
             PointsLabel = new Label();
+            tmrQuickTimeAnimation = new System.Windows.Forms.Timer(components);
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -338,12 +340,24 @@
             PointsLabel.TabIndex = 12;
             PointsLabel.Text = "Points: 0";
             // 
+            // tmrQuickTimeAnimation
+            // 
+            tmrQuickTimeAnimation.Tick += tmrQuickTimeAnimation_Tick;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(334, 411);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 13;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(panel1);
             Controls.Add(PointsLabel);
             Controls.Add(labelAmmo);
             Controls.Add(lblPlayerSpeak);
@@ -399,5 +413,7 @@
         private System.Windows.Forms.Timer tmrPlayMusicAfterGameOver;
         private Label labelAmmo;
         private Label PointsLabel;
+        private System.Windows.Forms.Timer tmrQuickTimeAnimation;
+        private Panel panel1;
     }
 }

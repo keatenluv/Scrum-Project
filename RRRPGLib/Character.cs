@@ -175,7 +175,7 @@ public class Character
     private static Character MakeWaterGunOpponent()
     {
         Character c = new Character();
-        c.Stats = new(luck: 0.7f, health: 100, reflex: 0.3f);
+        c.Stats = new(luck: 0.7f, health: 100, reflex: 0.1f);
         c.imgMap = new() {
       {ImgState.IDLE, Resources.GetObject("Img_FireGoblin_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Img_FireGoblin_NoWeapon") as Bitmap },

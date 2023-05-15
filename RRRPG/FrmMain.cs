@@ -6,7 +6,6 @@ namespace RRRPG
 {
     public partial class FrmMain : Form
     {
-        private SoundPlayer soundPlayer;
         private bool debug;
         private int state;
         private int _points;
@@ -19,6 +18,11 @@ namespace RRRPG
                 PointsLabel.Text = $"Points: {value}";
             }
         }
+        private Rectangle rect = new Rectangle(0, 0, 7, 100);
+        private CancellationTokenSource tokenSource = new();
+        private CancellationToken token;
+        private Graphics g;
+        private SoundPlayer soundPlayer;
         private Character player;
         private Character opponent;
         private Weapon weapon;
@@ -33,8 +37,10 @@ namespace RRRPG
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            debug = false;
+            token = tokenSource.Token;
+            debug = true;
             KeyPreview = true;
+            g = panel1.CreateGraphics();
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
             soundPlayer.PlayLooping();
             //labelAmmo.Visible = false;
@@ -131,7 +137,7 @@ namespace RRRPG
                 if (opponent.PullTrigger(weapon))
                 {
                     //Opponent did not dodge
-                    if (!QuickTimeEvent(opponent))
+                    if (!QuickTimeEvent(opponent).Result)
                     {
                         opponent.ShowKill();
                         opponent.SayGunWentOff();
@@ -163,13 +169,13 @@ namespace RRRPG
             }
         }
 
-        private void btnDoIt_Click(object sender, EventArgs e)
+        private async void btnDoIt_Click(object sender, EventArgs e)
         {
             //Chamber had bullet
             if (player.PullTrigger(weapon))
             {
                 //Player failed Quick Time event
-                if (!QuickTimeEvent(player))
+                if (!await QuickTimeEvent(player))
                 {
                     player.ShowKill();
                     player.SayGunWentOff();
@@ -178,7 +184,8 @@ namespace RRRPG
                     tmrStateMachine.Enabled = true;
                     return;
                 }
-
+                //Player Dodged
+                points += 50;
             }
             //Chamber didn't have bullet or dodged.
             player.ShowNoWeapon();
@@ -215,7 +222,7 @@ namespace RRRPG
         }
 
         // Returns true if passed
-        private bool QuickTimeEvent(Character character)
+        private async Task<bool> QuickTimeEvent(Character character)
         {
             if (character.Type == "opponent")
             {
@@ -225,16 +232,45 @@ namespace RRRPG
 
                 return false;
             }
-            //this.KeyPress += FrmMain_KeyPress;
-            // Player quick time event currently always passes
-            points += 50;
-            //this.KeyPress -= FrmMain_KeyPress;
-            return true;
+            int reactionTime = (int)((1.0f - weapon.Velocity + character.Stats.Reflex) * 1000);
+            MessageBox.Show($"{reactionTime}");
+            this.KeyPress += FrmMain_KeyPress;
+            tmrQuickTimeAnimation.Interval = reactionTime / (panel1.Width / (rect.Width - 2)); // div by number of rects we need
+            tmrQuickTimeAnimation.Start();
+            var result = false;
+            try
+            {
+                await Task.Delay(reactionTime, token);
+            }
+            catch (TaskCanceledException)
+            {
+                result = true;
+            }
+            ResetQuickActionAnimation();
+            tmrQuickTimeAnimation.Stop();
+            this.KeyPress -= FrmMain_KeyPress;
+
+            return result;
+        }
+
+        private void ResetQuickActionAnimation()
+        {
+            tmrQuickTimeAnimation.Stop();
+            g.Clear(TransparencyKey);
+            g.ResetTransform();
         }
 
         private void FrmMain_KeyPress(object sender, KeyPressEventArgs e)
         {
-            MessageBox.Show(e.KeyChar.ToString());
+            if (e.KeyChar == ' ')
+            {
+                tokenSource.Cancel();
+            }
+        }
+        private void tmrQuickTimeAnimation_Tick(object sender, EventArgs e)
+        {
+            g.FillRectangle(Brushes.Green, rect);
+            g.TranslateTransform(rect.Width, 0);
         }
 
         private void picWeaponSelectMagicWand_Click(object sender, EventArgs e)
@@ -264,6 +300,7 @@ namespace RRRPG
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
+            tokenSource.Dispose();
             FormManager.openForms.Remove(this);
             FormManager.CloseAll();
         }
@@ -281,5 +318,7 @@ namespace RRRPG
         {
 
         }
+
+
     }
 }
