@@ -523,8 +523,10 @@ namespace RRRPG
                     // Convert temperature to Fahrenheit and round to two decimal places
                     double temperatureInFahrenheit = Math.Round(temperatureInCelsius * 9 / 5 + 32, 2);
 
+                    string coldMessage = temperatureInFahrenheit < 90 ? "Fizz is cold" : "";
+
                     // Display the weather information in lblWeather
-                    lblWeather.Text = $"Weather in {city}, {state}, {country}:{Environment.NewLine}Description: {description}{Environment.NewLine}Temperature: {temperatureInFahrenheit}°F";
+                    lblWeather.Text = $"Weather in {city}, {state}, {country}:{Environment.NewLine}Description: {description}{Environment.NewLine}Temperature: {temperatureInFahrenheit}°F{Environment.NewLine}{coldMessage}";
 
                     // Set the background image for lblWeather
                     lblWeather.BackgroundImage = RRRPG.Properties.Resources.rain;
@@ -535,7 +537,6 @@ namespace RRRPG
                 lblWeather.Text = $"Error retrieving weather information: {ex.Message}";
             }
         }
-
 
 
 
