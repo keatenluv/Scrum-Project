@@ -499,10 +499,10 @@ namespace RRRPG
             frmTitle.SetWeaponData(weaponData);
             frmTitle.Show();
         }
-
+        //weather code
         private void btnWeather_Click(object sender, EventArgs e)
         {
-            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // Replace with your OpenWeatherMap API key
+            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // API key
             string city = "Ruston";
             string state = "Louisiana";
             string country = "US";
@@ -516,13 +516,13 @@ namespace RRRPG
                     string response = client.DownloadString(url);
                     JObject jsonObject = JObject.Parse(response);
 
-                    // Extract the necessary weather information from the JSON response
+                    // Weather info
                     string description = jsonObject["weather"][0]["description"].ToString();
                     double temperatureInCelsius = (double)jsonObject["main"]["temp"] - 273.15;
 
                     // Convert temperature to Fahrenheit and round to two decimal places
                     double temperatureInFahrenheit = Math.Round(temperatureInCelsius * 9 / 5 + 32, 2);
-
+                    //fizz is cold if <90 degrees
                     string coldMessage = temperatureInFahrenheit < 90 ? "Fizz is cold" : "";
 
                     // Display the weather information in lblWeather
