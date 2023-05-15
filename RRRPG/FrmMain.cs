@@ -41,7 +41,7 @@ namespace RRRPG
         private void FrmMain_Load(object sender, EventArgs e)
         {
             token = tokenSource.Token;
-            debug = true;
+            debug = false;
             KeyPreview = true;
             g = panel1.CreateGraphics();
             soundPlayer = new SoundPlayer(Resources.Mus_Title_Bg_Music);
