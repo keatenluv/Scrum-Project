@@ -21,7 +21,6 @@ namespace RRRPG
         public FrmMain()
         {
             InitializeComponent();
-            FormManager.openForms.Add(this);
         }
 
         public void SetWeaponData(Dictionary<string, float> weapons)
@@ -379,6 +378,7 @@ namespace RRRPG
 
             // Open FrmTitle
             FrmTitle frmTitle = new FrmTitle();
+            frmTitle.SetWeaponData(weaponData);
             frmTitle.Show();
         }
 

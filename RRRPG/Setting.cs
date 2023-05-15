@@ -14,25 +14,10 @@ namespace RRRPG
     {
 
         Dictionary<string, float> weapons = new Dictionary<string, float>();
-        //List<String> weapons = new List<String> { "Cork Gun", "Magic Wand", "Nerf Gun", "Water Gun", "Bow" };
-
-    
-
 
         public Setting()
         {
-
-            weapons.Add("Cork Gun", 0.4f);
-            weapons.Add("Water Gun", 0.1f);
-            weapons.Add("Nerf Revolver", 0.3f);
-            weapons.Add("Bow", 0.2f);
-            weapons.Add("Magic Wand", 0.2f);
-
             InitializeComponent();
-            foreach (KeyValuePair<string, float> weapon in weapons)
-            {
-                comboBoxWeapons.Items.Add(weapon.Key); 
-            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -43,6 +28,14 @@ namespace RRRPG
             title.ShowDialog();
         }
 
+        public void SetWeaponData(Dictionary<string, float> weaponData)
+        {
+            weapons = weaponData;
+            foreach (KeyValuePair<string, float> weapon in weapons)
+            {
+                comboBoxWeapons.Items.Add(weapon.Key);
+            }
+        }
         private void txtBoxChance_TextChanged(object sender, EventArgs e)
         {
             float num;

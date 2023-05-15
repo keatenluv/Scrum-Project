@@ -11,7 +11,13 @@ public partial class FrmTitle : Form {
 
   public FrmTitle() {
     InitializeComponent();
-  }
+    FormManager.openForms.Add(this);
+    weaponData.Add("Cork Gun", 0.4f);
+    weaponData.Add("Water Gun", 0.1f);
+    weaponData.Add("Nerf Revolver", 0.3f);
+    weaponData.Add("Bow", 0.2f);
+    weaponData.Add("Magic Wand", 0.2f);
+    }
 
   public void SetWeaponData(Dictionary<string, float> weapons)
     {
@@ -62,6 +68,7 @@ public partial class FrmTitle : Form {
         Hide();
         soundPlayer.Stop();
         Setting setting = new Setting();
+        setting.SetWeaponData(weaponData);
         setting.Owner = this;
         setting.ShowDialog();
         setting.Text = "Settings";
