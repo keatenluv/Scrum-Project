@@ -269,8 +269,8 @@ public class Character {
     c.imgMap = new() {
       {ImgState.IDLE, Resources.GetObject("Img_Wizard_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Img_Wizard_NoWeapon") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+      {ImgState.READY, Resources.GetObject("wizardReady") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wizardKilled") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("I will outlast you!", Resources.GetStream("Wizard1")) },
