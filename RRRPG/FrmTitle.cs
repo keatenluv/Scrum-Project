@@ -7,16 +7,23 @@ namespace RRRPG;
 public partial class FrmTitle : Form {
   private SoundPlayer soundPlayer;
   public static bool isMuted = false;
-  
+  public Dictionary<string, float> weaponData = new Dictionary<string, float>();
+
   public FrmTitle() {
     InitializeComponent();
   }
+
+  public void SetWeaponData(Dictionary<string, float> weapons)
+    {
+        weaponData = weapons;
+    }
 
   private void btnPlay_Click(object sender, EventArgs e) {
     ResourcesRef.Resources = Resources.ResourceManager;
     Hide();
     soundPlayer.Stop();
     FrmMain frmMain = new FrmMain();
+    frmMain.SetWeaponData(weaponData);
     frmMain.ShowDialog();
     FormManager.openForms.Add(frmMain);
   }

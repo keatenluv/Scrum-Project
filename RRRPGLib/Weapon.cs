@@ -38,6 +38,7 @@ public enum PullTriggerResult {
   DIDNT_GO_OFF,
 }
 
+
 /// <summary>
 /// Class for one of the Russian roulette weapons
 /// </summary>
@@ -71,7 +72,7 @@ public class Weapon {
   /// the weapon always misfires. A value of 0.5 means there is
   /// a 50% chance of misfire. And so on.
   /// </summary>
-  public float ChanceOfMisfire { get; private init; }
+  public float ChanceOfMisfire { get; set; }
 
   /// <summary>
   /// The amount of damage this weapon is capable of dealing if
@@ -90,6 +91,8 @@ public class Weapon {
   public float Velocity { get; private init; }
   #endregion
 
+
+
   #region Private Fields / Properties
   /// <summary>
   /// Used to generate random numbers for pulling the trigger
@@ -97,16 +100,16 @@ public class Weapon {
   private Random rand;
   #endregion
 
-  #region Ctor
-  /// <summary>
-  /// Explicit constructor. This is NOT to be used directly and is marked as private to enforce this
-  /// </summary>
-  /// <param name="chambers">Sets field <see cref="Chambers"/></param>
-  /// <param name="type">Sets field <see cref="Type"/></param>
-  /// <param name="chanceOfMisfire">Sets field <see cref="ChanceOfMisfire"/></param>
-  /// <param name="damage">Sets field <see cref="Damage"/></param>
-  /// <param name="velocity">Sets field <see cref="Velocity"/></param>
-  private Weapon(List<bool> chambers, WeaponType type, float chanceOfMisfire, float damage, float velocity) {
+    #region Ctor
+    /// <summary>
+    /// Explicit constructor. This is NOT to be used directly and is marked as private to enforce this
+    /// </summary>
+    /// <param name="chambers">Sets field <see cref="Chambers"/></param>
+    /// <param name="type">Sets field <see cref="Type"/></param>
+    /// <param name="chanceOfMisfire">Sets field <see cref="ChanceOfMisfire"/></param>
+    /// <param name="damage">Sets field <see cref="Damage"/></param>
+    /// <param name="velocity">Sets field <see cref="Velocity"/></param>
+    private Weapon(List<bool> chambers, WeaponType type, float chanceOfMisfire, float damage, float velocity) {
     Chambers = chambers;
     Type = type;
     ChanceOfMisfire = chanceOfMisfire;
@@ -114,17 +117,18 @@ public class Weapon {
     Velocity = velocity;
     rand = new Random();
   }
-  #endregion
+    #endregion
+    
 
-  #region Public Methods
-  /// <summary>
-  /// Simulates pulling the trigger of the weapon. This is fired after clicking the "Try your luck"
-  /// button or by the opponent. 
-  /// </summary>
-  /// <param name="character">The character that holds the weapon and is trying their luck. Used 
-  /// to retrieve the correct stats so calculations can be made</param>
-  /// <returns>A <see cref="PullTriggerResult"/> enum value that denotes the result</returns>
-  public PullTriggerResult PullTrigger(Character character) {
+    #region Public Methods
+    /// <summary>
+    /// Simulates pulling the trigger of the weapon. This is fired after clicking the "Try your luck"
+    /// button or by the opponent. 
+    /// </summary>
+    /// <param name="character">The character that holds the weapon and is trying their luck. Used 
+    /// to retrieve the correct stats so calculations can be made</param>
+    /// <returns>A <see cref="PullTriggerResult"/> enum value that denotes the result</returns>
+    public PullTriggerResult PullTrigger(Character character) {
     PullTriggerResult result = PullTriggerResult.UNKNOWN;
 
     float chance = RandNumber();
@@ -167,6 +171,8 @@ public class Weapon {
     };
     return weapon;
   }
+
+
   #endregion
 
   #region Private Methods
