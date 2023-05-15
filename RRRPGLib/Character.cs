@@ -215,7 +215,7 @@ public class Character {
       {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
       {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("wonkaDying") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wonka_dying") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("Welcome!",Resources.GetStream("Willy1")) },
