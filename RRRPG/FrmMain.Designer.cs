@@ -388,32 +388,37 @@
             // back
             // 
             back.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.Image = Properties.Resources.back_button;
             back.Location = new Point(2, 5);
             back.Name = "back";
-            back.Size = new Size(75, 35);
+            back.Size = new Size(142, 35);
             back.TabIndex = 17;
-            back.Text = "<- Title";
             back.UseVisualStyleBackColor = true;
             back.Click += back_Click;
             // 
             // btnWeather
             // 
+            btnWeather.BackColor = Color.White;
+            btnWeather.BackgroundImage = Properties.Resources.rain;
+            btnWeather.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnWeather.ForeColor = SystemColors.ControlLightLight;
             btnWeather.Location = new Point(2, 46);
             btnWeather.Name = "btnWeather";
-            btnWeather.Size = new Size(85, 32);
+            btnWeather.Size = new Size(142, 32);
             btnWeather.TabIndex = 18;
-            btnWeather.Text = "GetWeather";
-            btnWeather.UseVisualStyleBackColor = true;
+            btnWeather.Text = "Get Weather";
+            btnWeather.UseVisualStyleBackColor = false;
             btnWeather.Click += btnWeather_Click;
             // 
             // lblWeather
             // 
             lblWeather.AutoSize = true;
             lblWeather.BackColor = Color.Transparent;
+            lblWeather.BorderStyle = BorderStyle.Fixed3D;
             lblWeather.ForeColor = SystemColors.ControlLightLight;
-            lblWeather.Location = new Point(231, 9);
+            lblWeather.Location = new Point(160, 17);
             lblWeather.Name = "lblWeather";
-            lblWeather.Size = new Size(0, 15);
+            lblWeather.Size = new Size(2, 17);
             lblWeather.TabIndex = 19;
             // 
             // FrmMain
@@ -440,6 +445,7 @@
             Controls.Add(picPlayer);
             Controls.Add(picOpponent);
             Controls.Add(btnMute);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
             Text = "Russian Roulette RPG";

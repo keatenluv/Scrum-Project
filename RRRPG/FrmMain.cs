@@ -375,7 +375,7 @@ namespace RRRPG
 
         private void btnWeather_Click(object sender, EventArgs e)
         {
-            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // Replace with your OpenWeatherMap API key
+            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // OpenWeatherMap API key
             string city = "Ruston";
             string state = "Louisiana";
             string country = "US";
