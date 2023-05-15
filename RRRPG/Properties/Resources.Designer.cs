@@ -63,6 +63,16 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap back_button {
+            get {
+                object obj = ResourceManager.GetObject("back_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bender_dying_nerf {
             get {
                 object obj = ResourceManager.GetObject("bender_dying_nerf", resourceCulture);
@@ -77,6 +87,15 @@ namespace RRRPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("Bener_Ready_Nerf", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream discord_leave {
+            get {
+                return ResourceManager.GetStream("discord_leave", resourceCulture);
             }
         }
         
@@ -114,6 +133,15 @@ namespace RRRPG.Properties {
             get {
                 object obj = ResourceManager.GetObject("flameBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream Gun_Dry_Fire_Sound_Effect {
+            get {
+                return ResourceManager.GetStream("Gun_Dry_Fire_Sound_Effect", resourceCulture);
             }
         }
         
@@ -377,6 +405,16 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap muted {
+            get {
+                object obj = ResourceManager.GetObject("muted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nerf_death {
             get {
                 object obj = ResourceManager.GetObject("nerf_death", resourceCulture);
@@ -435,9 +473,59 @@ namespace RRRPG.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap not_muted {
+            get {
+                object obj = ResourceManager.GetObject("not_muted", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_muted1 {
+            get {
+                object obj = ResourceManager.GetObject("not_muted1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap not_muted2 {
+            get {
+                object obj = ResourceManager.GetObject("not_muted2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rain {
+            get {
+                object obj = ResourceManager.GetObject("rain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Rambo {
             get {
                 object obj = ResourceManager.GetObject("Rambo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Settings_Background {
+            get {
+                object obj = ResourceManager.GetObject("Settings_Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -579,6 +667,16 @@ namespace RRRPG.Properties {
         internal static System.Drawing.Bitmap wizardBackground {
             get {
                 object obj = ResourceManager.GetObject("wizardBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wonka_dying {
+            get {
+                object obj = ResourceManager.GetObject("wonka_dying", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

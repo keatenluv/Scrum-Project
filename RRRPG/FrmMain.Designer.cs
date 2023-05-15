@@ -35,6 +35,7 @@
             btnDoIt = new Button();
             lblPlayer = new Label();
             lblOpponent = new Label();
+            btnMute = new Button();
             picWeaponSelectMagicWand = new PictureBox();
             lblWeaponSelectMagicWand = new Label();
             panWeaponSelect = new Panel();
@@ -56,6 +57,14 @@
             PointsLabel = new Label();
             tmrQuickTimeAnimation = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            back = new Button();
+            btnWeather = new Button();
+            lblWeather = new Label();
             ((System.ComponentModel.ISupportInitialize)picOpponent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectMagicWand).BeginInit();
@@ -100,28 +109,36 @@
             // lblPlayer
             // 
             lblPlayer.AutoSize = true;
-            lblPlayer.BackColor = Color.ForestGreen;
-            lblPlayer.BorderStyle = BorderStyle.Fixed3D;
-            lblPlayer.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblPlayer.ForeColor = Color.White;
-            lblPlayer.Location = new Point(186, 98);
+            lblPlayer.BackColor = Color.Transparent;
+            lblPlayer.FlatStyle = FlatStyle.Popup;
+            lblPlayer.Font = new Font("Tempus Sans ITC", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            lblPlayer.ForeColor = Color.Cyan;
+            lblPlayer.Location = new Point(136, 100);
             lblPlayer.Name = "lblPlayer";
-            lblPlayer.Size = new Size(87, 34);
+            lblPlayer.Size = new Size(171, 62);
             lblPlayer.TabIndex = 3;
-            lblPlayer.Text = "Player";
+            lblPlayer.Text = "Bender";
             // 
             // lblOpponent
             // 
             lblOpponent.AutoSize = true;
-            lblOpponent.BackColor = Color.Firebrick;
-            lblOpponent.BorderStyle = BorderStyle.Fixed3D;
-            lblOpponent.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lblOpponent.ForeColor = Color.White;
-            lblOpponent.Location = new Point(761, 50);
+            lblOpponent.BackColor = Color.Transparent;
+            lblOpponent.Font = new Font("Viner Hand ITC", 26.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblOpponent.ForeColor = Color.IndianRed;
+            lblOpponent.Location = new Point(761, 34);
             lblOpponent.Name = "lblOpponent";
-            lblOpponent.Size = new Size(131, 34);
+            lblOpponent.Size = new Size(180, 57);
             lblOpponent.TabIndex = 4;
             lblOpponent.Text = "Opponent";
+            // 
+            // btnMute
+            // 
+            btnMute.Image = Properties.Resources.not_muted;
+            btnMute.Location = new Point(1073, 0);
+            btnMute.Name = "btnMute";
+            btnMute.Size = new Size(50, 48);
+            btnMute.TabIndex = 11;
+            btnMute.Click += btnMute_Click;
             // 
             // picWeaponSelectMagicWand
             // 
@@ -318,6 +335,96 @@
             tmrPlayMusicAfterGameOver.Interval = 2000;
             tmrPlayMusicAfterGameOver.Tick += tmrPlayMusicAfterGameOver_Tick;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.Navy;
+            textBox1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox1.ForeColor = Color.Yellow;
+            textBox1.Location = new Point(507, 529);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(142, 92);
+            textBox1.TabIndex = 12;
+            // 
+            // textBox2
+            // 
+            textBox2.BackColor = Color.Black;
+            textBox2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox2.ForeColor = Color.Red;
+            textBox2.Location = new Point(741, 529);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(141, 92);
+            textBox2.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = Color.FromArgb(192, 0, 192);
+            textBox3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox3.ForeColor = Color.White;
+            textBox3.Location = new Point(629, 529);
+            textBox3.Multiline = true;
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(136, 92);
+            textBox3.TabIndex = 14;
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = Color.FromArgb(0, 192, 192);
+            textBox4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox4.Location = new Point(848, 529);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(136, 92);
+            textBox4.TabIndex = 15;
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = Color.FromArgb(128, 255, 128);
+            textBox5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            textBox5.ForeColor = Color.FromArgb(255, 128, 0);
+            textBox5.Location = new Point(959, 529);
+            textBox5.Multiline = true;
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(132, 92);
+            textBox5.TabIndex = 16;
+            // 
+            // back
+            // 
+            back.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            back.Image = Properties.Resources.back_button;
+            back.Location = new Point(2, 5);
+            back.Name = "back";
+            back.Size = new Size(142, 35);
+            back.TabIndex = 17;
+            back.UseVisualStyleBackColor = true;
+            back.Click += back_Click;
+            // 
+            // btnWeather
+            // 
+            btnWeather.BackColor = Color.White;
+            btnWeather.BackgroundImage = Properties.Resources.rain;
+            btnWeather.Font = new Font("Showcard Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnWeather.ForeColor = SystemColors.ControlLightLight;
+            btnWeather.Location = new Point(2, 46);
+            btnWeather.Name = "btnWeather";
+            btnWeather.Size = new Size(142, 32);
+            btnWeather.TabIndex = 18;
+            btnWeather.Text = "Get Weather";
+            btnWeather.UseVisualStyleBackColor = false;
+            btnWeather.Click += btnWeather_Click;
+            // 
+            // lblWeather
+            // 
+            lblWeather.AutoSize = true;
+            lblWeather.BackColor = Color.Transparent;
+            lblWeather.BorderStyle = BorderStyle.Fixed3D;
+            lblWeather.ForeColor = SystemColors.ControlLightLight;
+            lblWeather.Location = new Point(160, 17);
+            lblWeather.Name = "lblWeather";
+            lblWeather.Size = new Size(2, 17);
+            lblWeather.TabIndex = 19;
+            // 
             // labelAmmo
             // 
             labelAmmo.AutoSize = true;
@@ -357,6 +464,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(1121, 887);
+            Controls.Add(lblWeather);
+            Controls.Add(btnWeather);
+            Controls.Add(back);
+            Controls.Add(textBox5);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(panel1);
             Controls.Add(PointsLabel);
             Controls.Add(labelAmmo);
@@ -369,6 +484,8 @@
             Controls.Add(btnDoIt);
             Controls.Add(picPlayer);
             Controls.Add(picOpponent);
+            Controls.Add(btnMute);
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmMain";
             Text = "Russian Roulette RPG";
@@ -394,6 +511,7 @@
         private Button btnDoIt;
         private Label lblPlayer;
         private Label lblOpponent;
+        private Button btnMute;
         private PictureBox picWeaponSelectMagicWand;
         private Label lblWeaponSelectMagicWand;
         private Panel panWeaponSelect;
@@ -411,6 +529,14 @@
         private Label lblWeaponSelectNerfRev;
         private PictureBox picWeaponSelectNerfRev;
         private System.Windows.Forms.Timer tmrPlayMusicAfterGameOver;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private Button back;
+        private Button btnWeather;
+        private Label lblWeather;
         private Label labelAmmo;
         private Label PointsLabel;
         private System.Windows.Forms.Timer tmrQuickTimeAnimation;

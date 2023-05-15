@@ -1,5 +1,6 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static RRRPGLib.ResourcesRef;
 using ImgState = RRRPGLib.CharacterImgStateType;
 using TalkState = RRRPGLib.CharacterTalkStateType;
@@ -15,6 +16,8 @@ public class Character
     /// <summary>
     /// Holds the stats for this character
     /// </summary>
+    // Public property for the opponent's name
+    public string Name { get; set; }
     public Stats Stats { get; private set; }
     public string Type { get; private set; }
     #endregion
@@ -37,77 +40,86 @@ public class Character
 
     }
 
-    /// <summary>
-    /// Explicit constructor
-    /// </summary>
-    /// <param name="pic">Holds the picture box for the character</param>
-    /// <param name="lblTalk">Holds the label to contain character's dialog</param>
-    public Character(PictureBox pic, Label lblTalk)
-    {
-        this.pic = pic;
-        this.lblTalk = lblTalk;
-        this.fortitude = FortitudeType.NORMAL;
-    }
-    #endregion
+  /// <summary>
+  /// Explicit constructor
+  /// </summary>
+  /// <param name="pic">Holds the picture box for the character</param>
+  /// <param name="lblTalk">Holds the label to contain character's dialog</param>
+  public Character(PictureBox pic, Label lblTalk) {
+    
+    this.pic = pic;
+    this.lblTalk = lblTalk;
+    this.fortitude = FortitudeType.NORMAL;
+  }
+  #endregion
+ 
+  #region Public Methods
+  /// <summary>
+  /// Create an opponent suitable for the given weapon
+  /// </summary>
+  /// <param name="weaponType">Type of weapon to create the opponent for</param>
+  /// <param name="pic">PictureBox to hold the image of the opponent</param>
+  /// <param name="lblTalk">Label to hold the opponent's dialog</param>
+  /// <returns>The opponent created</returns>
+  public static Character MakeOpponent(WeaponType weaponType, PictureBox pic, Label lblTalk) {
+    Character c = weaponType switch {
+      WeaponType.MAGIC_WAND => MakeMagicWandOpponent(),
+      WeaponType.NERF_REVOLVER => MakeNerfRevolverOpponent(),
+      WeaponType.BOW => MakeBowOpponent(),
+      WeaponType.CORK_GUN => MakeCorkGunOpponent(),
+      WeaponType.WATER_GUN => MakeWaterGunOpponent(),
+    };
 
-    #region Public Methods
-    /// <summary>
-    /// Create an opponent suitable for the given weapon
-    /// </summary>
-    /// <param name="weaponType">Type of weapon to create the opponent for</param>
-    /// <param name="pic">PictureBox to hold the image of the opponent</param>
-    /// <param name="lblTalk">Label to hold the opponent's dialog</param>
-    /// <returns>The opponent created</returns>
-    public static Character MakeOpponent(WeaponType weaponType, PictureBox pic, Label lblTalk)
-    {
-        Character c = weaponType switch
+        // Assign specific names based on the weapon type
+        c.Name = weaponType switch
         {
-            WeaponType.MAGIC_WAND => MakeMagicWandOpponent(),
-            WeaponType.NERF_REVOLVER => MakeNerfRevolverOpponent(),
-            WeaponType.BOW => MakeBowOpponent(),
-            WeaponType.CORK_GUN => MakeCorkGunOpponent(),
-            WeaponType.WATER_GUN => MakeWaterGunOpponent(),
-        };
-        c.pic = pic;
-        c.Type = "opponent";
-        c.lblTalk = lblTalk;
-        c.ShowIdle();
-        c.Shutup();
-        return c;
-    }
+            WeaponType.CORK_GUN => "Willy Wonka    ",
+            WeaponType.MAGIC_WAND => "   Gandalf   ",
+            WeaponType.WATER_GUN => "    Fizz     ",
+            WeaponType.NERF_REVOLVER => "    Robert    ",
+            WeaponType.BOW => "   Yoshi   ",
+            _ => c.Name // Use the default name if no specific name is defined
+        } ;
 
-    /// <summary>
-    /// Create a player with the appropriate animations and dialog for the given weapon
-    /// </summary>
-    /// <param name="weaponType">Type of weapon to create the player for</param>
-    /// <param name="pic">PictureBox to hold the image of the player</param>
-    /// <param name="lblTalk">Label to hold the player's dialog</param>
-    /// <returns></returns>
-    public static Character MakePlayer(WeaponType weaponType, PictureBox pic, Label lblTalk)
-    {
-        Character c = weaponType switch
-        {
-            WeaponType.MAGIC_WAND => MakeMagicWandPlayer(),
-            WeaponType.NERF_REVOLVER => MakeNerfRevolverPlayer(),
-            WeaponType.BOW => MakeBowPlayer(),
-            WeaponType.CORK_GUN => MakeCorkGunPlayer(),
-            WeaponType.WATER_GUN => MakeWaterGunPlayer(),
-        };
-        c.Type = "player";
-        c.pic = pic;
-        c.lblTalk = lblTalk;
-        c.ShowIdle();
-        c.Shutup();
-        return c;
-    }
+    c.pic = pic;
+    c.Type = "opponent";
+    c.lblTalk = lblTalk;
+    c.ShowIdle();
+    c.Shutup();
+    return c;
+  }
 
+  /// <summary>
+  /// Create a player with the appropriate animations and dialog for the given weapon
+  /// </summary>
+  /// <param name="weaponType">Type of weapon to create the player for</param>
+  /// <param name="pic">PictureBox to hold the image of the player</param>
+  /// <param name="lblTalk">Label to hold the player's dialog</param>
+  /// <returns></returns>
+  public static Character MakePlayer(WeaponType weaponType, PictureBox pic, Label lblTalk) {
+    Character c = weaponType switch {
+      WeaponType.MAGIC_WAND => MakeMagicWandPlayer(),
+      WeaponType.NERF_REVOLVER => MakeNerfRevolverPlayer(),
+      WeaponType.BOW => MakeBowPlayer(),
+      WeaponType.CORK_GUN => MakeCorkGunPlayer(),
+      WeaponType.WATER_GUN => MakeWaterGunPlayer(),
+    };
+        
+    c.Type = "player";
+    c.pic = pic;
+    c.lblTalk = lblTalk;
+    c.ShowIdle();
+    c.Shutup();
+    return c;
+  }
+    
     /// <summary>
     /// Handles what happens when the character pulls the trigger of the weapon
     /// </summary>
     /// <param name="weapon">Weapon in play</param>
     /// <returns>True if the character got shot, false otherwise</returns>
-    public bool PullTrigger(Weapon weapon)
-    {
+    public bool PullTrigger(Weapon weapon) {
+    var result = weapon.PullTrigger(this);
         var result = weapon.PullTrigger(this);
         if (result == PullTriggerResult.DIDNT_GO_OFF)
             return false;
@@ -200,7 +212,7 @@ public class Character
       {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
       {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("wonkaDying") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wonka_dying") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("Welcome!",Resources.GetStream("Willy1")) },
@@ -223,9 +235,9 @@ public class Character
     c.dialogMap = new() {
 
       {TalkState.TALK_SMACK, ("YOSHI", Resources.GetStream("yoshi")) },
-      {TalkState.SAY_OW, ("", null) },
-      {TalkState.BONED, ("", Resources.GetStream("yoshi_tongue")) },
-      {TalkState.GUN_WENT_OFF, ("", Resources.GetStream("yoshi_tongue")) },
+      {TalkState.SAY_OW, ("", Resources.GetStream("yoshi_tongue")) },
+      {TalkState.BONED, ("", Resources.GetStream("discord_leave")) },
+      {TalkState.GUN_WENT_OFF, ("",  Resources.GetStream("discord_leave")) },
       {TalkState.SURVIVED, ("", null) },
     };
     return c;
