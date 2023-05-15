@@ -523,7 +523,7 @@ namespace RRRPG
                     // Convert temperature to Fahrenheit and round to two decimal places
                     double temperatureInFahrenheit = Math.Round(temperatureInCelsius * 9 / 5 + 32, 2);
                     //fizz is cold if <90 degrees
-                    string coldMessage = temperatureInFahrenheit < 90 ? "Fizz is cold" : "";
+                    string coldMessage = temperatureInFahrenheit < 90 ? "Fizz is cold" : "Fizz is heating up!!";
 
                     // Display the weather information in lblWeather
                     lblWeather.Text = $"Weather in {city}, {state}, {country}:{Environment.NewLine}Description: {description}{Environment.NewLine}Temperature: {temperatureInFahrenheit}°F{Environment.NewLine}{coldMessage}";
