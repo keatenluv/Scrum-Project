@@ -44,6 +44,7 @@ public enum PullTriggerResult
     DIDNT_GO_OFF,
 }
 
+
 /// <summary>
 /// Class for one of the Russian roulette weapons
 /// </summary>
@@ -72,13 +73,13 @@ public class Weapon
     /// </summary>
     public WeaponType Type { get; private init; }
 
-    /// <summary>
-    /// The chance that the weapon could misfire. A value of 0.0
-    /// means the weapon will never misfire. A value of 1.0 means
-    /// the weapon always misfires. A value of 0.5 means there is
-    /// a 50% chance of misfire. And so on.
-    /// </summary>
-    public float ChanceOfMisfire { get; private init; }
+  /// <summary>
+  /// The chance that the weapon could misfire. A value of 0.0
+  /// means the weapon will never misfire. A value of 1.0 means
+  /// the weapon always misfires. A value of 0.5 means there is
+  /// a 50% chance of misfire. And so on.
+  /// </summary>
+  public float ChanceOfMisfire { get; set; }
 
     /// <summary>
     /// The amount of damage this weapon is capable of dealing if
@@ -97,12 +98,14 @@ public class Weapon
     public float Velocity { get; private init; }
     #endregion
 
-    #region Private Fields / Properties
-    /// <summary>
-    /// Used to generate random numbers for pulling the trigger
-    /// </summary>
-    private Random rand;
-    #endregion
+
+
+  #region Private Fields / Properties
+  /// <summary>
+  /// Used to generate random numbers for pulling the trigger
+  /// </summary>
+  private Random rand;
+  #endregion
 
     #region Ctor
     /// <summary>

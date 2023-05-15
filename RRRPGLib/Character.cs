@@ -206,21 +206,20 @@ public class Character
       {TalkState.GUN_WENT_OFF, ("Oh noes",Resources.GetStream("FireGoblin1")) },
       {TalkState.SURVIVED, ("My fire continues to roar!", Resources.GetStream("FireGoblin2")) },
     };
-        return c;
-    }
-    private static Character MakeCorkGunOpponent()
-    {
-        Character c = new Character();
-        c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
-        c.imgMap = new() {
-      {ImgState.IDLE, Resources.GetObject("willyWonka") as Bitmap },
+    return c;
+  }
+  private static Character MakeCorkGunOpponent() {
+    Character c = new Character();
+    c.Stats = new(luck: 0.0f, health: 100, reflex: 0.0f);
+    c.imgMap = new() {
+      {ImgState.IDLE, Resources.GetObject("wonkaWave4") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("willyWonkaNoGun") as Bitmap },
-      {ImgState.READY, Resources.GetObject("willyWonkaSurvives") as Bitmap },
+      {ImgState.READY, Resources.GetObject("willyWonka") as Bitmap },
       {ImgState.KILL, Resources.GetObject("wonka_dying") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("Welcome!",Resources.GetStream("Willy1")) },
-      {TalkState.SAY_OW, ("A little nonsense now and then is relished by the wisest men.", null) },
+      {TalkState.SAY_OW, ("", null) },
       {TalkState.BONED, ("Is it my soul that calls upon my name?", null) },
       {TalkState.GUN_WENT_OFF, ("Candy is dandy, but liquor is quicker.",Resources.GetStream("Wonka3")) },
       {TalkState.SURVIVED, ("The suspense is terrible. I hope it’ll last.",Resources.GetStream("Willy2")) },
@@ -271,8 +270,8 @@ public class Character
         c.imgMap = new() {
       {ImgState.IDLE, Resources.GetObject("Img_Wizard_Idle") as Bitmap },
       {ImgState.NO_WEAPON, Resources.GetObject("Img_Wizard_NoWeapon") as Bitmap },
-      {ImgState.READY, Resources.GetObject("Img_Wizard_Ready") as Bitmap },
-      {ImgState.KILL, Resources.GetObject("Img_Wizard_Kill") as Bitmap },
+      {ImgState.READY, Resources.GetObject("wizardReady") as Bitmap },
+      {ImgState.KILL, Resources.GetObject("wizardKilled") as Bitmap },
     };
     c.dialogMap = new() {
       {TalkState.TALK_SMACK, ("I will outlast you!", Resources.GetStream("Wizard1")) },

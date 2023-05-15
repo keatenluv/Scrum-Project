@@ -31,11 +31,16 @@ namespace RRRPG
         private Weapon weapon;
         private Dictionary<WeaponType, (PictureBox pic, Label lbl)> weaponSelectMap;
         private Dictionary<WeaponType, Image> weaponBackgroundMap;
+        public Dictionary<string, float> weaponData = new Dictionary<string, float>();
 
         public FrmMain()
         {
             InitializeComponent();
-            FormManager.openForms.Add(this);
+        }
+
+        public void SetWeaponData(Dictionary<string, float> weapons)
+        {
+            weaponData = weapons;
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
@@ -61,6 +66,7 @@ namespace RRRPG
             lblOpponentSpeak.Visible = false;
             lblPlayerSpeak.Visible = false;
             weapon = Weapon.MakeWeapon(WeaponType.MAGIC_WAND);
+            weapon.ChanceOfMisfire = weaponData["Magic Wand"];
             state = -1;
             points = 0;
             weaponSelectMap = new() {
@@ -70,6 +76,7 @@ namespace RRRPG
                 {WeaponType.MAGIC_WAND, (picWeaponSelectMagicWand, lblWeaponSelectMagicWand) },
                 {WeaponType.NERF_REVOLVER, (picWeaponSelectNerfRev, lblWeaponSelectNerfRev) },
             };
+
             //each weapon has own background image that loads with WeaponType
             weaponBackgroundMap = new() {
                 {WeaponType.BOW, Resources.yoshiBackground },
@@ -93,6 +100,7 @@ namespace RRRPG
 
             //corkgun stats initialization
             Weapon corkGun = Weapon.MakeWeapon(WeaponType.CORK_GUN);
+            corkGun.ChanceOfMisfire = weaponData["Cork Gun"];
             string corkGunStats = GetWeaponStats(corkGun);
             textBox3.Text = corkGunStats;
             textBox3.Visible = false;
@@ -102,6 +110,7 @@ namespace RRRPG
 
             //initialize water gun stats
             Weapon waterGun = Weapon.MakeWeapon(WeaponType.WATER_GUN);
+            waterGun.ChanceOfMisfire = weaponData["Water Gun"];
             string waterGunStats = GetWeaponStats(waterGun);
             textBox2.Text = waterGunStats;
             textBox2.Visible = false;
@@ -111,6 +120,7 @@ namespace RRRPG
 
             //nerfrev stat initialization
             Weapon nerfRevolver = Weapon.MakeWeapon(WeaponType.NERF_REVOLVER);
+            nerfRevolver.ChanceOfMisfire = weaponData["Nerf Revolver"];
             string nerfRevolverStats = GetWeaponStats(nerfRevolver);
             textBox4.Text = nerfRevolverStats;
             textBox4.Visible = false;
@@ -120,15 +130,13 @@ namespace RRRPG
 
             //bow initialization
             Weapon bow = Weapon.MakeWeapon(WeaponType.BOW);
+            bow.ChanceOfMisfire = weaponData["Bow"];
             string bowStats = GetWeaponStats(bow);
             textBox5.Text = bowStats;
             textBox5.Visible = false;
 
             picWeaponSelectBow.MouseEnter += picWeaponSelectBow_MouseEnter;
             picWeaponSelectBow.MouseLeave += picWeaponSelectBow_MouseLeave;
-
-
-
 
         }
 
@@ -308,10 +316,10 @@ namespace RRRPG
         }
 
 
-
         private void picWeaponSelectMagicWand_MouseEnter(object sender, EventArgs e)
         {
             Weapon magicWand = Weapon.MakeWeapon(WeaponType.MAGIC_WAND);
+            magicWand.ChanceOfMisfire = weaponData["Magic Wand"];
             textBox1.Text = GetWeaponStats(magicWand);
             textBox1.Visible = true;
         }
@@ -488,12 +496,13 @@ namespace RRRPG
 
             // Open FrmTitle
             FrmTitle frmTitle = new FrmTitle();
+            frmTitle.SetWeaponData(weaponData);
             frmTitle.Show();
         }
 
         private void btnWeather_Click(object sender, EventArgs e)
         {
-            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // OpenWeatherMap API key
+            string apiKey = "784b268b080333f362b3e803c3e3bc12"; // Replace with your OpenWeatherMap API key
             string city = "Ruston";
             string state = "Louisiana";
             string country = "US";
