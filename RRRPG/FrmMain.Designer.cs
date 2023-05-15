@@ -73,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectNerfRev).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // picOpponent
@@ -338,13 +339,14 @@
             // labelAmmo
             // 
             labelAmmo.AutoSize = true;
-            labelAmmo.BackColor = Color.White;
+            labelAmmo.BackColor = Color.Black;
             labelAmmo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelAmmo.Location = new Point(388, 361);
+            labelAmmo.ForeColor = Color.Green;
+            labelAmmo.Location = new Point(3, 0);
             labelAmmo.Name = "labelAmmo";
-            labelAmmo.Size = new Size(90, 32);
+            labelAmmo.Size = new Size(380, 32);
             labelAmmo.TabIndex = 11;
-            labelAmmo.Text = "Ammo";
+            labelAmmo.Text = "Use Space when green to dodge";
             // 
             // PointsLabel
             // 
@@ -363,6 +365,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(labelAmmo);
             panel1.Location = new Point(376, 406);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 100);
@@ -474,7 +477,6 @@
             Controls.Add(textBox1);
             Controls.Add(panel1);
             Controls.Add(PointsLabel);
-            Controls.Add(labelAmmo);
             Controls.Add(lblPlayerSpeak);
             Controls.Add(lblOpponentSpeak);
             Controls.Add(btnStart);
@@ -500,6 +502,8 @@
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectNerfRev).EndInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectWaterGun).EndInit();
             ((System.ComponentModel.ISupportInitialize)picWeaponSelectCorkGun).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -40,8 +40,10 @@ namespace RRRPG
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            labelAmmo.MaximumSize = panel1.Size;
+            labelAmmo.AutoSize = true;
             token = tokenSource.Token;
-            debug = true;
+            debug = false;
             labelAmmo.Visible = debug;
             KeyPreview = true;
             g = panel1.CreateGraphics();
@@ -146,6 +148,7 @@ namespace RRRPG
 
         private void tmrDialog_Tick(object sender, EventArgs e)
         {
+            labelAmmo.Visible = false;
             if (state == 0)
             {
                 opponent.Shutup();
@@ -243,9 +246,11 @@ namespace RRRPG
                 {
                     player.ShowKill();
                     player.SayGunWentOff();
+                    btnDoIt.Enabled = false;
                     state = 3;
                     tmrStateMachine.Interval = 2200;
                     tmrStateMachine.Enabled = true;
+                    labelAmmo.Visible = true;
                     return;
                 }
                 //Player Dodged
