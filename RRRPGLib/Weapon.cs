@@ -143,7 +143,7 @@ public class Weapon
         if (!Chambers[CurChamberIndex++])
             return PullTriggerResult.DIDNT_GO_OFF;
 
-        if (ChanceOfMisfire < rand.NextSingle())
+        if (ChanceOfMisfire > rand.NextSingle())
             return PullTriggerResult.DIDNT_GO_OFF;
 
         return PullTriggerResult.UNKNOWN;
@@ -200,7 +200,7 @@ public class Weapon
     private static Weapon MakeNerfRev()
     {
         return new Weapon(
-          chambers: new List<bool>(6),
+          chambers: new List<bool>(5),
           type: WeaponType.NERF_REVOLVER,
           chanceOfMisfire: 0.3f,
           damage: 25,
@@ -209,7 +209,7 @@ public class Weapon
     private static Weapon MakeCorkGun()
     {
         return new Weapon(
-          chambers: new List<bool>(4),
+          chambers: new List<bool>(5),
           type: WeaponType.CORK_GUN,
           chanceOfMisfire: 0.4f,
           damage: 40,
@@ -218,7 +218,7 @@ public class Weapon
     private static Weapon MakeWaterGun()
     {
         return new Weapon(
-          chambers: new List<bool>(8),
+          chambers: new List<bool>(5),
           type: WeaponType.WATER_GUN,
           chanceOfMisfire: 0.1f,
           damage: 20,
@@ -227,7 +227,7 @@ public class Weapon
     private static Weapon MakeBow()
     {
         return new Weapon(
-          chambers: new List<bool>(3),
+          chambers: new List<bool>(5),
           type: WeaponType.BOW,
           chanceOfMisfire: 0.2f,
           damage: 50,
