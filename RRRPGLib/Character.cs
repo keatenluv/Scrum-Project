@@ -119,7 +119,6 @@ public class Character
     /// <param name="weapon">Weapon in play</param>
     /// <returns>True if the character got shot, false otherwise</returns>
     public bool PullTrigger(Weapon weapon) {
-    var result = weapon.PullTrigger(this);
         var result = weapon.PullTrigger(this);
         if (result == PullTriggerResult.DIDNT_GO_OFF)
             return false;

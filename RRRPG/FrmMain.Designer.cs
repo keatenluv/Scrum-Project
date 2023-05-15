@@ -335,6 +335,39 @@
             tmrPlayMusicAfterGameOver.Interval = 2000;
             tmrPlayMusicAfterGameOver.Tick += tmrPlayMusicAfterGameOver_Tick;
             // 
+            // labelAmmo
+            // 
+            labelAmmo.AutoSize = true;
+            labelAmmo.BackColor = Color.White;
+            labelAmmo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAmmo.Location = new Point(388, 361);
+            labelAmmo.Name = "labelAmmo";
+            labelAmmo.Size = new Size(90, 32);
+            labelAmmo.TabIndex = 11;
+            labelAmmo.Text = "Ammo";
+            // 
+            // PointsLabel
+            // 
+            PointsLabel.AutoSize = true;
+            PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            PointsLabel.ForeColor = Color.Gold;
+            PointsLabel.Location = new Point(410, 15);
+            PointsLabel.Name = "PointsLabel";
+            PointsLabel.Size = new Size(88, 25);
+            PointsLabel.TabIndex = 12;
+            PointsLabel.Text = "Points: 0";
+            // 
+            // tmrQuickTimeAnimation
+            // 
+            tmrQuickTimeAnimation.Tick += tmrQuickTimeAnimation_Tick;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(334, 411);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(200, 100);
+            panel1.TabIndex = 13;
+            // 
             // textBox1
             // 
             textBox1.BackColor = Color.Navy;
@@ -424,39 +457,6 @@
             lblWeather.Name = "lblWeather";
             lblWeather.Size = new Size(2, 17);
             lblWeather.TabIndex = 19;
-            // 
-            // labelAmmo
-            // 
-            labelAmmo.AutoSize = true;
-            labelAmmo.BackColor = Color.White;
-            labelAmmo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            labelAmmo.Location = new Point(388, 361);
-            labelAmmo.Name = "labelAmmo";
-            labelAmmo.Size = new Size(90, 32);
-            labelAmmo.TabIndex = 11;
-            labelAmmo.Text = "Ammo";
-            // 
-            // PointsLabel
-            // 
-            PointsLabel.AutoSize = true;
-            PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            PointsLabel.ForeColor = Color.Gold;
-            PointsLabel.Location = new Point(12, 9);
-            PointsLabel.Name = "PointsLabel";
-            PointsLabel.Size = new Size(88, 25);
-            PointsLabel.TabIndex = 12;
-            PointsLabel.Text = "Points: 0";
-            // 
-            // tmrQuickTimeAnimation
-            // 
-            tmrQuickTimeAnimation.Tick += tmrQuickTimeAnimation_Tick;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(334, 411);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 100);
-            panel1.TabIndex = 13;
             // 
             // FrmMain
             // 
